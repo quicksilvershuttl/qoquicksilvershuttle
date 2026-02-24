@@ -1,5 +1,8 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+
+
 import { useEffect, useState } from 'react';
 import { supabase } from '../../utils/supabase';
 import {
@@ -184,8 +187,8 @@ export default function AdminDashboard() {
                                     key={filter}
                                     onClick={() => setStatusFilter(filter)}
                                     className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${statusFilter === filter
-                                            ? 'bg-[#0c1d37] text-white shadow-lg'
-                                            : 'text-slate-400 hover:text-[#0c1d37] hover:bg-slate-50'
+                                        ? 'bg-[#0c1d37] text-white shadow-lg'
+                                        : 'text-slate-400 hover:text-[#0c1d37] hover:bg-slate-50'
                                         }`}
                                 >
                                     {filter}
@@ -302,12 +305,12 @@ export default function AdminDashboard() {
                                             </td>
                                             <td className="px-8 py-8">
                                                 <span className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.15em] inline-flex items-center gap-2 ${booking.status === 'confirmed' ? 'bg-green-50 text-green-600' :
-                                                        booking.status === 'cancelled' ? 'bg-red-50 text-red-600' :
-                                                            'bg-amber-50 text-amber-600 animate-pulse'
+                                                    booking.status === 'cancelled' ? 'bg-red-50 text-red-600' :
+                                                        'bg-amber-50 text-amber-600 animate-pulse'
                                                     }`}>
                                                     <span className={`w-1.5 h-1.5 rounded-full ${booking.status === 'confirmed' ? 'bg-green-500' :
-                                                            booking.status === 'cancelled' ? 'bg-red-500' :
-                                                                'bg-amber-500'
+                                                        booking.status === 'cancelled' ? 'bg-red-500' :
+                                                            'bg-amber-500'
                                                         }`}></span>
                                                     {booking.status}
                                                 </span>
