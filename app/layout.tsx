@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import LayoutShell from "./components/LayoutShell";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -129,11 +130,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        <Navigation />
-        <div className="pt-20">
+        <LayoutShell
+          navigation={<Navigation />}
+          footer={<Footer />}
+        >
           {children}
-        </div>
-        <Footer />
+        </LayoutShell>
       </body>
     </html>
   );
