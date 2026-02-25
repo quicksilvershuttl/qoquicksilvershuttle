@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, MapPin, Mail, Clock, Facebook, Twitter, Instagram } from 'lucide-react';
+import { Phone, MapPin, Mail, Clock, Facebook } from 'lucide-react';
 
 export default function Footer() {
     const serviceAreas = [
@@ -29,12 +29,6 @@ export default function Footer() {
                         <div className="flex gap-4">
                             <a href="https://www.facebook.com/quicksilverairportshuttle/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Facebook">
                                 <Facebook size={24} />
-                            </a>
-                            <a href="#" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Twitter">
-                                <Twitter size={24} />
-                            </a>
-                            <a href="#" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Instagram">
-                                <Instagram size={24} />
                             </a>
                         </div>
                     </div>
@@ -126,6 +120,7 @@ export default function Footer() {
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                             title="Quicksilver Location Map"
+                            suppressHydrationWarning
                         ></iframe>
                     </div>
                     {/* Maps Directions Hack Call-to-action */}
@@ -168,7 +163,7 @@ export default function Footer() {
                             <div className="relative w-16 h-16 hidden sm:block">
                                 <Image
                                     src="/Home page images/unnamed-1.png"
-                                    alt="Trust Badge"
+                                    alt="Quicksilver TripAdvisor Certificate of Excellence"
                                     fill
                                     sizes="64px"
                                     className="object-contain"

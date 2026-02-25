@@ -12,7 +12,7 @@ export default function BackgroundOverlay({
     className = ""
 }: BackgroundOverlayProps) {
     return (
-        <div className={`absolute inset-0 -z-10 pointer-events-none overflow-hidden ${className}`}>
+        <div className={`absolute inset-0 -z-10 pointer-events-none overflow-hidden ${className}`} aria-hidden="true">
             <Image
                 src={src}
                 alt=""
@@ -20,6 +20,8 @@ export default function BackgroundOverlay({
                 className={`object-cover object-center ${opacity}`}
                 sizes="100vw"
                 quality={10}
+                loading="lazy"
+                fetchPriority="low"
             />
         </div>
     );

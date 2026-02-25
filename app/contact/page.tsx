@@ -6,6 +6,7 @@ import FadeIn from '../components/FadeIn';
 import HeroImage from '../components/HeroImage';
 import BackgroundOverlay from '../components/BackgroundOverlay';
 import TrustAvatars from '../components/TrustAvatars';
+import ContactForm from '../components/ContactForm';
 
 export const metadata: Metadata = {
     title: 'Contact Us | Executive Support Hub | Quicksilver Kansas City',
@@ -147,56 +148,13 @@ export default function ContactPage() {
 
                         {/* Form Column */}
                         <FadeIn delay={0.25}>
-                            <div className="bg-white p-12 sm:p-16 rounded-[60px] shadow-[0_50px_100px_rgba(0,0,0,0.05)] border-2 border-slate-50 relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/[0.03] rounded-bl-[100px]"></div>
-
-                                <h3 className="text-3xl font-black text-[#0c1d37] font-display tracking-tight mb-12">Send A Message.</h3>
-
-                                <form className="space-y-8 relative z-10">
-                                    <div className="grid md:grid-cols-2 gap-8">
-                                        <div className="space-y-2">
-                                            <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-2">Full Name</label>
-                                            <input type="text" className="w-full bg-slate-50 border-none rounded-3xl px-8 py-5 text-[#0c1d37] font-bold focus:ring-4 focus:ring-blue-500/10 transition-all outline-none" placeholder="John Doe" />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-2">Email Address</label>
-                                            <input type="email" className="w-full bg-slate-50 border-none rounded-3xl px-8 py-5 text-[#0c1d37] font-bold focus:ring-4 focus:ring-blue-500/10 transition-all outline-none" placeholder="john@company.com" />
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-2">Service Type</label>
-                                        <select className="w-full bg-slate-50 border-none rounded-3xl px-8 py-5 text-[#0c1d37] font-bold focus:ring-4 focus:ring-blue-500/10 transition-all outline-none appearance-none cursor-pointer">
-                                            <option>New Reservation</option>
-                                            <option>Corporate Account Inquiry</option>
-                                            <option>General Support</option>
-                                            <option>Feedback</option>
-                                        </select>
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-2">Your Inquiry</label>
-                                        <textarea rows={5} className="w-full bg-slate-50 border-none rounded-3xl px-8 py-5 text-[#0c1d37] font-bold focus:ring-4 focus:ring-blue-500/10 transition-all outline-none resize-none" placeholder="Tell us how we can assist..."></textarea>
-                                    </div>
-
-                                    <button className="btn btn-cta w-full py-7 rounded-[32px] text-xl font-black uppercase tracking-tight shadow-2xl shadow-orange-500/20 active:scale-95 transition-all flex items-center justify-center gap-4 bg-orange-500 hover:bg-orange-600 border-none">
-                                        <Send size={24} />
-                                        Submit Inquiry
-                                    </button>
-                                </form>
-                            </div>
+                            <ContactForm />
                         </FadeIn>
                     </div>
                 </div>
             </section>
 
-            {/* Mobile Sticky Label */}
-            <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
-                <a href={`tel:${phone.replace(/\D/g, '')}`} className="btn bg-[#0c1d37] text-white w-full py-5 text-2xl shadow-2xl flex items-center justify-center gap-4 hover:bg-[#122b5e] border-none rounded-2xl ring-4 ring-white">
-                    <Phone size={28} />
-                    Call Executive Desk
-                </a>
-            </div>
+
         </main>
     );
 }

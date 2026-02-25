@@ -350,28 +350,28 @@ export default async function ServiceAreaPage({ params }: Props) {
                                 <span className="text-[10px] sm:text-xs font-black tracking-[0.3em] text-white/90 uppercase">{data.name} Division · Since 1982</span>
                             </div>
 
-                            <h1 className="mb-8 font-display font-black leading-[1.05] text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white drop-shadow-2xl uppercase">
+                            <h1 className="mb-8 font-display font-black leading-[1.05] text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white drop-shadow-2xl">
                                 {data.name} <br className="hidden sm:block" />
                                 <span className="text-blue-400">Airport Shuttle.</span>
                             </h1>
 
-                            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-xl mx-auto lg:mx-0 font-light">
+                            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-xl mx-auto lg:mx-0 font-light px-4 sm:px-0">
                                 {uniqueIntro}
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center lg:justify-start w-full sm:w-auto mb-16">
+                            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center lg:justify-start w-full sm:w-auto mb-16 px-4 sm:px-0">
                                 <Link
                                     href="/fare-quote"
-                                    className="btn btn-cta text-xl px-12 py-6 rounded-3xl shadow-2xl shadow-orange-500/20 active:scale-95 transition-all font-black uppercase tracking-tight flex items-center justify-center gap-3 border-none bg-orange-500 hover:bg-orange-600 w-full sm:w-auto"
+                                    className="btn btn-cta text-lg sm:text-xl px-10 py-5 sm:px-12 sm:py-6 rounded-2xl sm:rounded-3xl shadow-2xl shadow-orange-500/20 active:scale-95 transition-all font-black uppercase tracking-tight flex items-center justify-center gap-3 border-none bg-orange-500 hover:bg-orange-600 w-full sm:w-auto"
                                 >
                                     <span>Get Free Quote</span>
-                                    <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+                                    <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                                 </Link>
                                 <a
                                     href={`tel:${phone.replace(/\D/g, '')}`}
-                                    className="flex items-center justify-center gap-4 text-white hover:text-blue-400 transition-all py-6 px-10 rounded-3xl border-2 border-white/20 hover:border-blue-400/40 backdrop-blur-md w-full sm:w-auto font-black uppercase tracking-tight"
+                                    className="flex items-center justify-center gap-4 text-white hover:text-blue-400 transition-all py-5 px-10 rounded-2xl sm:rounded-3xl border-2 border-white/20 hover:border-blue-400/40 backdrop-blur-md w-full sm:w-auto font-black uppercase tracking-tight"
                                 >
-                                    <Phone size={24} />
+                                    <Phone size={20} />
                                     <span>{phone}</span>
                                 </a>
                             </div>
@@ -1060,14 +1060,6 @@ export default async function ServiceAreaPage({ params }: Props) {
                     </FadeIn>
                 </div>
             </section>
-
-            {/* Mobile Sticky Label (Bottom of Page) */}
-            <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
-                <a href={`tel:${phone.replace(/\D/g, '')}`} className="btn btn-primary w-full py-5 text-2xl shadow-2xl animate-pulse">
-                    <Phone size={28} />
-                    Call {locationName} Now
-                </a>
-            </div>
 
             {/* 14) HTML Entity Comments (Hidden snippets) */}
             {/* <!-- {locationName} airport shuttle near {data.landmarks[0]}. Licensed, 24/7 same-day service. --> */}

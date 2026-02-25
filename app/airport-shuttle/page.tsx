@@ -64,28 +64,28 @@ export default function AirportShuttleIndexPage() {
                                 <span className="text-[10px] sm:text-xs font-black tracking-[0.3em] text-white/90 uppercase">Regional Transit Network</span>
                             </div>
 
-                            <h1 className="mb-8 font-display font-black leading-[1.05] text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white drop-shadow-2xl">
+                            <h1 className="mb-8 font-display font-black leading-[1.05] text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white drop-shadow-2xl">
                                 Every City. <br className="hidden sm:block" />
                                 <span className="text-blue-400">One Call.</span>
                             </h1>
 
-                            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-3xl mx-auto font-light">
+                            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-3xl mx-auto font-light px-4 sm:px-0">
                                 From Overland Park to Topeka, Kansas City to Manhattan — Quicksilver delivers fixed-rate airport shuttles to every corner of the KC metro.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center mb-16">
+                            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center mb-16 px-4 sm:px-0">
                                 <Link
                                     href="/fare-quote"
-                                    className="btn btn-cta text-xl px-12 py-6 rounded-3xl shadow-2xl shadow-orange-500/20 active:scale-95 transition-all font-black uppercase tracking-tight flex items-center justify-center gap-3 border-none bg-orange-500 hover:bg-orange-600 w-full sm:w-auto"
+                                    className="btn btn-cta text-lg sm:text-xl px-10 py-5 sm:px-12 sm:py-6 rounded-2xl sm:rounded-3xl shadow-2xl shadow-orange-500/20 active:scale-95 transition-all font-black uppercase tracking-tight flex items-center justify-center gap-3 border-none bg-orange-500 hover:bg-orange-600 w-full sm:w-auto"
                                 >
                                     <span>Calculate Your Fare</span>
-                                    <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+                                    <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                                 </Link>
                                 <a
                                     href={`tel:${phone.replace(/\D/g, '')}`}
-                                    className="flex items-center justify-center gap-4 text-white hover:text-blue-400 transition-all py-6 px-10 rounded-3xl border-2 border-white/20 hover:border-blue-400/40 backdrop-blur-md w-full sm:w-auto font-black uppercase tracking-tight"
+                                    className="flex items-center justify-center gap-4 text-white hover:text-blue-400 transition-all py-5 px-10 rounded-2xl sm:rounded-3xl border-2 border-white/20 hover:border-blue-400/40 backdrop-blur-md w-full sm:w-auto font-black uppercase tracking-tight"
                                 >
-                                    <Phone size={24} />
+                                    <Phone size={20} />
                                     <span>{phone}</span>
                                 </a>
                             </div>
@@ -95,7 +95,7 @@ export default function AirportShuttleIndexPage() {
                                 <div className="flex items-center -space-x-3">
                                     {[32, 44, 46, 12, 14].map((id, i) => (
                                         <div key={i} className="w-12 h-12 rounded-full border-2 border-[#0c1d37] shadow-lg overflow-hidden flex-shrink-0 transition-transform hover:scale-110 hover:z-20">
-                                            <img src={`https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${id}.jpg`} alt="Client" className="w-full h-full object-cover" />
+                                            <img src={`https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${id}.jpg`} alt="Quicksilver airport shuttle client" className="w-full h-full object-cover" />
                                         </div>
                                     ))}
                                     <div className="w-12 h-12 rounded-full bg-blue-600 border-2 border-[#0c1d37] flex items-center justify-center text-white text-[10px] font-black backdrop-blur-sm z-10 shadow-lg">+4K</div>
@@ -268,13 +268,7 @@ export default function AirportShuttleIndexPage() {
                 </div>
             </section>
 
-            {/* Mobile Sticky Label */}
-            <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
-                <a href={`tel:${phone.replace(/\D/g, '')}`} className="btn bg-[#0c1d37] text-white w-full py-5 text-2xl shadow-2xl flex items-center justify-center gap-4 hover:bg-[#122b5e] border-none rounded-2xl ring-4 ring-white">
-                    <Phone size={28} />
-                    Call Dispatch Now
-                </a>
-            </div>
+
 
             {/* Structured Data */}
             <script

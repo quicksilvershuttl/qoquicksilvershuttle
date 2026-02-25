@@ -1,6 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
+import MobileActionTray from './MobileActionTray';
 
 export default function LayoutShell({
     navigation,
@@ -20,6 +21,7 @@ export default function LayoutShell({
             <div className={isAdmin ? '' : 'pt-20'}>
                 {children}
             </div>
+            {!isAdmin && <MobileActionTray />}
             {!isAdmin && footer}
         </>
     );

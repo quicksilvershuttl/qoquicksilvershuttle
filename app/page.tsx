@@ -59,25 +59,25 @@ export default function HomePage() {
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed mb-6 sm:mb-8 max-w-xl text-center lg:text-left font-light mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed mb-6 sm:mb-8 max-w-xl text-center lg:text-left font-light mx-auto lg:mx-0 px-4 sm:px-0">
                 Kansas City Airport Shuttle & Airport Car Services.
                 Reliable, fixed-rate transportation since 1982.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start w-full sm:w-auto mb-10 sm:mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start w-full sm:w-auto mb-10 sm:mb-12 px-2 sm:px-0">
                 <Link
                   href="/fare-quote"
-                  className="btn btn-cta text-base sm:text-lg px-6 py-5 sm:px-9 sm:py-5 group shadow-[0_0_40px_rgba(249,115,22,0.25)] hover:shadow-[0_0_60px_rgba(249,115,22,0.45)] border-none w-full sm:w-auto flex justify-center items-center"
+                  className="btn btn-cta text-base sm:text-lg px-8 py-4 sm:px-9 sm:py-5 group shadow-[0_0_40px_rgba(249,115,22,0.25)] hover:shadow-[0_0_60px_rgba(249,115,22,0.45)] border-none w-full sm:w-auto flex justify-center items-center rounded-2xl sm:rounded-full"
                 >
                   <span>Get a Free Quote</span>
                   <ArrowRight className="ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform" size={20} />
                 </Link>
                 <a
                   href="tel:913-262-0905"
-                  className="group flex items-center justify-center gap-2 sm:gap-3 text-white transition-all py-5 px-6 sm:px-7 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/[0.06] backdrop-blur-sm w-full sm:w-auto"
+                  className="group flex items-center justify-center gap-2 sm:gap-3 text-white transition-all py-4 px-6 sm:px-7 rounded-2xl sm:rounded-full border border-white/20 hover:border-white/40 hover:bg-white/[0.06] backdrop-blur-sm w-full sm:w-auto"
                 >
                   <Phone size={18} className="text-blue-300 group-hover:text-white transition-colors" />
-                  <span className="font-bold tracking-wide text-sm sm:text-base">For Booking: 913-262-0905</span>
+                  <span className="font-bold tracking-wide text-sm sm:text-base">913-262-0905</span>
                 </a>
               </div>
 

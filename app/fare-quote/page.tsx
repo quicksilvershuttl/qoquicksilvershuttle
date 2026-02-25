@@ -79,7 +79,7 @@ export default function FareQuotePage() {
                                         'https://randomuser.me/api/portraits/men/14.jpg'
                                     ].map((imgSrc, i) => (
                                         <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0f2044] shadow-lg overflow-hidden flex-shrink-0">
-                                            <img src={imgSrc} alt="Customer" className="w-full h-full object-cover" />
+                                            <img src={imgSrc} alt="Verified Quicksilver customer" className="w-full h-full object-cover" />
                                         </div>
                                     ))}
                                     <div className="w-10 h-10 rounded-full bg-white/10 border-2 border-[#0f2044] flex items-center justify-center text-white/70 text-[10px] font-bold backdrop-blur-sm z-10">+4K</div>
@@ -365,13 +365,7 @@ export default function FareQuotePage() {
                 </div>
             </section>
 
-            {/* Mobile Sticky Label */}
-            <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
-                <a href="tel:913-262-0905" className="btn btn-cta bg-blue-600 text-white w-full py-5 text-2xl shadow-2xl flex items-center justify-center gap-4 border-none rounded-2xl active:scale-95 transition-all">
-                    <Phone size={28} />
-                    Call For Low Rates
-                </a>
-            </div>
+
         </main>
     );
 }

@@ -228,6 +228,34 @@ h3 {
   background: hsl(var(--primary-dark));
 }
 
+/* Form Validation Styles */
+input.was-validated:invalid,
+select.was-validated:invalid,
+textarea.was-validated:invalid {
+  border-style: solid !important;
+  border-width: 2px !important;
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+  background-color: rgba(254, 242, 242, 0.3) !important;
+}
+
+input.was-validated:invalid:focus,
+select.was-validated:invalid:focus,
+textarea.was-validated:invalid:focus {
+  border-style: solid !important;
+  border-width: 2px !important;
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+
+input.was-validated:valid,
+select.was-validated:valid,
+textarea.was-validated:valid {
+  border-style: solid !important;
+  border-width: 2px !important;
+  border-color: #22c55e !important;
+}
+
 /* Utility Classes */
 .text-balance {
   text-wrap: balance;

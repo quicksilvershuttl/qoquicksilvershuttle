@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Calendar, MapPin, Users, Luggage, Phone, Clock, CreditCard, ShieldCheck, Plane, Car, Sparkles, HelpCircle, ArrowRight, Shield, Star, Award, DollarSign, ChevronDown, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import FadeIn from '../components/FadeIn';
@@ -10,6 +10,8 @@ import { supabase } from '../utils/supabase';
 
 export default function ReservationPage() {
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+    const [submitted, setSubmitted] = useState(false);
+    const formRef = useRef<HTMLFormElement>(null);
     const [formData, setFormData] = useState({
         serviceType: '',
         tripType: '',
@@ -34,6 +36,10 @@ export default function ReservationPage() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setSubmitted(true);
+        // Mark all inputs as validated so CSS shows red borders on invalid
+        formRef.current?.querySelectorAll('input, select').forEach(el => el.classList.add('was-validated'));
+        if (!formRef.current?.checkValidity()) return;
         setStatus('submitting');
 
         try {
@@ -57,6 +63,7 @@ export default function ReservationPage() {
 
             if (error) throw error;
             setStatus('success');
+            setSubmitted(false);
             // Reset form
             setFormData({
                 serviceType: '',
@@ -72,6 +79,7 @@ export default function ReservationPage() {
                 email: '',
                 phone: ''
             });
+            formRef.current?.querySelectorAll('input, select').forEach(el => el.classList.remove('was-validated'));
         } catch (err) {
             console.error('Booking error:', err);
             setStatus('error');
@@ -102,7 +110,7 @@ export default function ReservationPage() {
                             </div>
 
                             {/* H1 — VALUE PROPOSITION */}
-                            <h1 className="mb-4 sm:mb-6 font-display font-black leading-[1.05] text-4xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-white drop-shadow-lg text-center lg:text-left uppercase">
+                            <h1 className="mb-4 sm:mb-6 font-display font-black leading-[1.05] text-4xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-white drop-shadow-lg text-center lg:text-left">
                                 Secure Your <br className="hidden sm:block" />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-blue-300 drop-shadow-xl">
                                     Reservation
@@ -143,7 +151,7 @@ export default function ReservationPage() {
                                         'https://randomuser.me/api/portraits/men/14.jpg'
                                     ].map((imgSrc, i) => (
                                         <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0f2044] shadow-lg overflow-hidden flex-shrink-0">
-                                            <img src={imgSrc} alt="Customer" className="w-full h-full object-cover" />
+                                            <img src={imgSrc} alt="Verified Quicksilver customer" className="w-full h-full object-cover" />
                                         </div>
                                     ))}
                                     <div className="w-10 h-10 rounded-full bg-white/10 border-2 border-[#0f2044] flex items-center justify-center text-white/70 text-[10px] font-bold backdrop-blur-sm z-10">+4K</div>
@@ -239,7 +247,7 @@ export default function ReservationPage() {
                                             </p>
                                         </div>
 
-                                        <form onSubmit={handleSubmit} className="space-y-16">
+                                        <form ref={formRef} onSubmit={handleSubmit} className="space-y-16" noValidate>
                                             {/* 1. Service Type */}
                                             <div>
                                                 <label className="block text-xs font-black text-slate-400 mb-10 uppercase tracking-[0.3em] flex items-center gap-4">
@@ -331,6 +339,7 @@ export default function ReservationPage() {
                                                                 id="pickup"
                                                                 name="pickup"
                                                                 required
+                                                                maxLength={200}
                                                                 className={inputClass}
                                                                 placeholder="Enter Pickup Address"
                                                                 value={formData.pickup}
@@ -344,6 +353,7 @@ export default function ReservationPage() {
                                                                 id="dropoff"
                                                                 name="dropoff"
                                                                 required
+                                                                maxLength={200}
                                                                 className={inputClass}
                                                                 placeholder="Enter Destination Address"
                                                                 value={formData.dropoff}
@@ -446,10 +456,12 @@ export default function ReservationPage() {
                                                             id={field.id}
                                                             name={field.name}
                                                             required
+                                                            maxLength={field.type === 'email' ? 254 : field.type === 'tel' ? 20 : 100}
                                                             className="w-full px-8 py-5 bg-white/5 border border-white/10 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none font-bold text-white placeholder:text-white/20 hover:bg-white/[0.08]"
                                                             placeholder={field.placeholder}
                                                             value={(formData as any)[field.name]}
                                                             onChange={handleChange}
+                                                            aria-invalid={submitted && !(formData as any)[field.name] ? 'true' : undefined}
                                                         />
                                                     ))}
                                                 </div>
@@ -467,9 +479,15 @@ export default function ReservationPage() {
                                                 </button>
 
                                                 {status === 'error' && (
-                                                    <p className="mt-4 text-red-500 font-bold uppercase tracking-widest text-xs">
+                                                    <div role="alert" aria-live="assertive" className="mt-4 text-red-500 font-bold uppercase tracking-widest text-xs">
                                                         Something went wrong. Please check your connection and try again.
-                                                    </p>
+                                                    </div>
+                                                )}
+
+                                                {submitted && !formRef.current?.checkValidity() && (
+                                                    <div role="alert" aria-live="polite" className="mt-4 text-red-500 font-bold uppercase tracking-widest text-xs">
+                                                        Please fill in all required fields correctly before submitting.
+                                                    </div>
                                                 )}
 
                                                 <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mt-12 text-slate-400 text-xs font-black uppercase tracking-[0.2em]">
@@ -526,13 +544,7 @@ export default function ReservationPage() {
                 </div>
             </section>
 
-            {/* Mobile Sticky Label */}
-            <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
-                <a href="tel:913-262-0905" className="btn btn-cta bg-[#0c1d37] text-white w-full py-5 text-2xl shadow-2xl flex items-center justify-center gap-4 border-none rounded-2xl active:scale-95 transition-all">
-                    <Phone size={28} />
-                    Call To Book Now
-                </a>
-            </div>
+
         </main>
     );
 }
