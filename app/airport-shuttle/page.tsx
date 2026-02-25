@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { MapPin, Phone, ArrowRight, Plane, ShieldCheck, Zap, Sparkles, Navigation, Star, Shield, Clock, DollarSign, Award, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, ArrowRight, Plane, ShieldCheck, Zap, Sparkles, Navigation, Star, Shield, Clock, DollarSign, Award, CheckCircle, Globe } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import FadeIn from '../components/FadeIn';
@@ -9,7 +9,7 @@ import TrustAvatars from '../components/TrustAvatars';
 import FAQAccordion from '../components/FAQAccordion';
 
 export const metadata: Metadata = {
-    title: 'Airport Shuttle Service | All Kansas City Locations | Quicksilver Airport car',
+    title: 'Airport Shuttle Service | All Kansas City Locations | Quicksilver',
     description: 'Quicksilver provides premium airport shuttle and private car services in the Kansas City metro. Professional chauffeurs and flat-rate pricing since 1982.',
 };
 
@@ -47,117 +47,65 @@ export default function AirportShuttleIndexPage() {
 
     return (
         <main className="min-h-screen bg-white">
-            {/* ═══════════════════════════════════════════════════════════════
-                HERO SECTION — "Perfect Hero Section" framework:
-                Step 1: Clear Value Proposition
-                Step 2: Split Layout (text left, imagery right)
-                Step 3: Creative Concept (fleet coverage map)
-                Step 4: Developed Imagery (vehicle showcase)
-                Step 5: Design System (typography, colors, button hierarchy)
-                Step 6: Optimization (social proof, free CTA, credibility logos)
-             ═══════════════════════════════════════════════════════════════ */}
-            <section className="relative min-h-[100dvh] flex items-center overflow-hidden bg-gradient-to-br from-[#0c1d3d] via-[#122b5e] to-[#0f2044] pt-24 pb-12">
-                {/* Ambient Background Effects */}
+            {/* ═══ HERO SECTION — Perfect Hero Section framework ═══ */}
+            <section className="relative min-h-[90dvh] flex items-center overflow-hidden bg-gradient-to-br from-[#0c1d37] via-[#1a3a6b] to-[#0c1d37] pt-32 pb-24">
                 <div className="absolute inset-0 z-0">
                     <BackgroundOverlay />
-                    <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#2463eb]/8 rounded-full blur-[180px] animate-pulse-glow pointer-events-none"></div>
-                    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-[150px] animate-float pointer-events-none"></div>
-                    <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[180px] pointer-events-none"></div>
+                    <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[600px] bg-blue-400/5 rounded-full blur-[150px] pointer-events-none"></div>
+                    <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
                 </div>
 
                 <div className="container-custom relative z-10 px-4 sm:px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center pt-8 lg:pt-0">
-
-                        {/* ═══ LEFT COLUMN: Value Proposition + CTAs + Social Proof ═══ */}
-                        <FadeIn className="text-white flex flex-col items-center lg:items-start text-center lg:text-left">
-
-                            {/* Badge */}
-                            <div className="inline-flex items-center gap-2 mb-7 px-5 py-2 bg-white/[0.07] backdrop-blur-xl rounded-full border border-white/[0.12] shadow-[0_0_30px_rgba(36,99,235,0.1)]">
-                                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.6)]"></div>
-                                <p className="text-[11px] font-bold tracking-[0.25em] text-white/80 uppercase">26+ Cities Covered Across KC Metro</p>
+                    <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+                        <FadeIn>
+                            <div className="inline-flex items-center gap-2 mb-10 px-6 py-2.5 bg-white/[0.08] backdrop-blur-3xl rounded-full border border-white/[0.15] shadow-2xl">
+                                <Globe size={18} className="text-blue-400" />
+                                <span className="text-[10px] sm:text-xs font-black tracking-[0.3em] text-white/90 uppercase">Regional Transit Network</span>
                             </div>
 
-                            {/* H1 — VALUE PROPOSITION */}
-                            <h1 className="mb-4 sm:mb-6 font-display font-black leading-[1.1] text-4xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-white drop-shadow-lg text-center lg:text-left">
+                            <h1 className="mb-8 font-display font-black leading-[1.05] text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white drop-shadow-2xl">
                                 Every City. <br className="hidden sm:block" />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-blue-300 drop-shadow-xl">
-                                    One Call.
-                                </span>
+                                <span className="text-blue-400">One Call.</span>
                             </h1>
 
-                            {/* Supporting Copy */}
-                            <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed mb-6 sm:mb-8 max-w-xl text-center lg:text-left font-light mx-auto lg:mx-0">
-                                From Overland Park to Topeka, Kansas City to Manhattan — Quicksilver delivers
-                                fixed-rate airport shuttles to every corner of the KC metro. 24/7 dispatch, professional chauffeurs, no surge pricing.
+                            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-3xl mx-auto font-light">
+                                From Overland Park to Topeka, Kansas City to Manhattan — Quicksilver delivers fixed-rate airport shuttles to every corner of the KC metro.
                             </p>
 
-                            {/* ═══ CTAs — Primary (orange) + Ghost (outline) ═══ */}
-                            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start w-full sm:w-auto mb-10 sm:mb-12">
+                            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center mb-16">
                                 <Link
                                     href="/fare-quote"
-                                    className="btn btn-cta text-base sm:text-lg px-6 py-5 sm:px-9 sm:py-5 group shadow-[0_0_40px_rgba(249,115,22,0.25)] hover:shadow-[0_0_60px_rgba(249,115,22,0.45)] border-none w-full sm:w-auto flex justify-center items-center"
+                                    className="btn btn-cta text-xl px-12 py-6 rounded-3xl shadow-2xl shadow-orange-500/20 active:scale-95 transition-all font-black uppercase tracking-tight flex items-center justify-center gap-3 border-none bg-orange-500 hover:bg-orange-600 w-full sm:w-auto"
                                 >
-                                    <span>Get a Free Quote</span>
-                                    <ArrowRight className="ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform" size={20} />
+                                    <span>Calculate Your Fare</span>
+                                    <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
                                 </Link>
                                 <a
                                     href={`tel:${phone.replace(/\D/g, '')}`}
-                                    className="group flex items-center justify-center gap-2 sm:gap-3 text-white transition-all py-5 px-6 sm:px-7 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/[0.06] backdrop-blur-sm w-full sm:w-auto"
+                                    className="flex items-center justify-center gap-4 text-white hover:text-blue-400 transition-all py-6 px-10 rounded-3xl border-2 border-white/20 hover:border-blue-400/40 backdrop-blur-md w-full sm:w-auto font-black uppercase tracking-tight"
                                 >
-                                    <Phone size={18} className="text-blue-300 group-hover:text-white transition-colors" />
-                                    <span className="font-bold tracking-wide text-sm sm:text-base">{phone}</span>
+                                    <Phone size={24} />
+                                    <span>{phone}</span>
                                 </a>
                             </div>
 
-                            {/* ═══ SOCIAL PROOF — Stacked avatars + rating ═══ */}
-                            <div className="flex flex-col sm:flex-row items-center gap-5 mb-10 pt-8 border-t border-white/10 w-full lg:w-auto mx-auto lg:mx-0">
-                                {/* Stacked Avatars */}
-                                <TrustAvatars />
-                                <div className="flex flex-col gap-0.5 items-center sm:items-start">
-                                    <div className="flex items-center justify-center sm:justify-start gap-1 text-amber-400">
-                                        {[...Array(5)].map((_, i) => (
-                                            <Star key={i} fill="currentColor" size={14} />
-                                        ))}
-                                        <span className="text-white text-sm ml-1 font-bold">4.9/5</span>
-                                    </div>
-                                    <p className="text-sm text-slate-300">
-                                        <strong className="text-white">Rick, Scott & 4,000+ riders</strong> trust Quicksilver
-                                    </p>
+                            {/* Trust Avatars & Stats */}
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
+                                <div className="flex items-center -space-x-3">
+                                    {[32, 44, 46, 12, 14].map((id, i) => (
+                                        <div key={i} className="w-12 h-12 rounded-full border-2 border-[#0c1d37] shadow-lg overflow-hidden flex-shrink-0 transition-transform hover:scale-110 hover:z-20">
+                                            <img src={`https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${id}.jpg`} alt="Client" className="w-full h-full object-cover" />
+                                        </div>
+                                    ))}
+                                    <div className="w-12 h-12 rounded-full bg-blue-600 border-2 border-[#0c1d37] flex items-center justify-center text-white text-[10px] font-black backdrop-blur-sm z-10 shadow-lg">+4K</div>
                                 </div>
-                            </div>
-
-                            {/* ═══ CREDIBILITY LOGOS ═══ */}
-                            <div className="flex flex-wrap xl:flex-nowrap whitespace-nowrap items-center justify-center lg:justify-start gap-3 sm:gap-4 mx-auto lg:mx-0">
-                                {[
-                                    { label: 'Fully Insured', icon: <Shield size={16} className="text-[#2463eb]" /> },
-                                    { label: '24/7 Dispatch', icon: <Clock size={16} className="text-[#2463eb]" /> },
-                                    { label: 'Fixed Pricing', icon: <DollarSign size={16} className="text-[#2463eb]" /> },
-                                    { label: 'TripAdvisor ★', icon: <Award size={16} className="text-amber-500" /> },
-                                ].map((badge, i) => (
-                                    <div key={i} className="flex items-center gap-2 bg-white text-[#0f2044] px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest shadow-lg shadow-black/20 hover:-translate-y-1 transition-transform">
-                                        {badge.icon}
-                                        <span>{badge.label}</span>
+                                <div className="text-center sm:text-left">
+                                    <div className="flex items-center justify-center sm:justify-start gap-1 text-amber-500 mb-1">
+                                        {[...Array(5)].map((_, i) => (<Star key={i} fill="currentColor" size={16} className="drop-shadow-sm" />))}
                                     </div>
-                                ))}
-                            </div>
-                        </FadeIn>
-
-                        {/* ═══ RIGHT COLUMN: Hero Imagery ═══ */}
-                        <FadeIn delay={0.25} className="w-full relative flex items-center justify-center pb-8 lg:pb-0">
-                            <div className="relative w-full max-w-lg lg:max-w-full mx-auto">
-                                {/* Glow behind vehicle */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-[#2463eb]/20 rounded-full blur-[80px] sm:blur-[100px] pointer-events-none"></div>
-
-                                {/* Main Vehicle Image */}
-                                <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] lg:aspect-auto lg:h-[400px] drop-shadow-[0_20px_60px_rgba(36,99,235,0.4)]">
-                                    <HeroImage
-                                        src="/Home page images/Saloon Class.png"
-                                        alt="Quicksilver premium airport shuttle vehicle serving all Kansas City metro locations"
-                                        priority
-                                    />
+                                    <p className="text-sm font-medium text-slate-400">Serving <strong className="text-white">26+ Cities</strong> Daily</p>
                                 </div>
-
-
                             </div>
                         </FadeIn>
                     </div>
@@ -165,22 +113,22 @@ export default function AirportShuttleIndexPage() {
             </section>
 
             {/* Service Pillars */}
-            <section className="section bg-white">
-                <div className="container-custom">
+            <section className="py-24 bg-white">
+                <div className="container-custom px-4 sm:px-6">
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
-                            { icon: <MapPin />, title: 'Door-to-Door', desc: 'Direct pickup from your home or office' },
-                            { icon: <Navigation />, title: '24/7 Service', desc: 'Any time, day or night availability' },
-                            { icon: <Zap />, title: 'Fixed Rates', desc: 'No surcharges or hidden fees' },
-                            { icon: <ShieldCheck />, title: 'Flight Tracked', desc: 'We monitor your flight status live' }
+                            { icon: <MapPin size={32} />, title: 'Door-to-Door', desc: 'Direct pickup from your home or office. No hubs, no transfers.' },
+                            { icon: <Clock size={32} />, title: '24/7 Human Dispatch', desc: 'Live specialists available any time, day or night.' },
+                            { icon: <DollarSign size={32} />, title: 'Fixed Rates', desc: 'No surge pricing or hidden tolls. Flat rates you can trust.' },
+                            { icon: <Plane size={32} />, title: 'Flight Tracked', desc: 'We monitor your flight status live for seamless pickups.' }
                         ].map((feature, index) => (
                             <FadeIn key={index} delay={index * 0.1}>
-                                <div className="bg-white p-8 rounded-[30px] border border-[#2463eb]/10 text-center group hover:bg-white hover:shadow-xl transition-all h-full">
-                                    <div className="w-16 h-16 bg-[#2463eb]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#2463eb] shadow-sm group-hover:bg-[#2463eb] group-hover:text-white transition-colors">
+                                <div className="bg-white p-10 rounded-[40px] border-2 border-slate-50 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_100px_rgba(36,99,235,0.08)] hover:border-blue-50 transition-all duration-700 text-center h-full group ring-1 ring-slate-100">
+                                    <div className="w-20 h-20 bg-blue-50 text-[#2463eb] rounded-[28px] flex items-center justify-center mx-auto mb-8 shadow-inner group-hover:bg-[#2463eb] group-hover:text-white transition-all duration-700 group-hover:rotate-6">
                                         {feature.icon}
                                     </div>
-                                    <h3 className="text-xl font-bold mb-3 text-[#2463eb] uppercase tracking-tight">{feature.title}</h3>
-                                    <p className="text-[#2463eb]/60 font-medium leading-relaxed">{feature.desc}</p>
+                                    <h3 className="text-2xl font-black mb-4 text-[#0c1d37] font-display tracking-tight uppercase group-hover:text-blue-600 transition-colors">{feature.title}</h3>
+                                    <p className="text-slate-500 font-medium leading-relaxed">{feature.desc}</p>
                                 </div>
                             </FadeIn>
                         ))}
@@ -189,38 +137,34 @@ export default function AirportShuttleIndexPage() {
             </section>
 
             {/* Popular Area Hubs */}
-            <section className="section bg-slate-50">
-                <div className="container-custom">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                        <FadeIn>
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2463eb]/10 text-[#2463eb] font-bold text-xs mb-6 uppercase tracking-widest border border-[#2463eb]/20">
-                                <Sparkles size={14} />
-                                Regional Coverage
-                            </div>
-                            <h2 className="font-display text-4xl md:text-5xl font-bold text-[#2463eb] uppercase tracking-tight">Popular Service Hubs</h2>
-                        </FadeIn>
-                        <FadeIn delay={0.2}>
-                            <p className="text-xl text-[#2463eb]/60 max-w-md font-medium italic">
-                                Most requested pickup and dropoff portals across the metro.
-                            </p>
-                        </FadeIn>
-                    </div>
+            <section className="py-32 bg-slate-50 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-[0.03] pointer-events-none"></div>
+                <div className="container-custom px-4 sm:px-6">
+                    <FadeIn className="text-center max-w-4xl mx-auto mb-20">
+                        <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 bg-white rounded-full border border-white shadow-xl">
+                            <Sparkles size={16} className="text-[#2463eb]" />
+                            <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-500">Most Frequent Destinies</span>
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-[#0c1d37] tracking-tight leading-[1.05] mb-8">
+                            Service <span className="text-blue-500">Hubs.</span>
+                        </h2>
+                    </FadeIn>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
                         {locations.filter(loc => loc.popular).map((location, i) => (
                             <FadeIn key={location.slug} delay={i * 0.1}>
                                 <Link
                                     href={`/airport-shuttle/${location.slug}`}
-                                    className="bg-white p-10 rounded-[40px] text-center group hover:shadow-2xl hover:border-[#2463eb]/30 border border-[#2463eb]/10 transition-all flex flex-col items-center h-full shadow-lg relative overflow-hidden"
+                                    className="bg-white p-12 rounded-[50px] text-center border-2 border-white shadow-[0_30px_60px_rgba(0,0,0,0.03)] hover:shadow-[0_60px_100px_rgba(36,99,235,0.12)] hover:border-blue-50 transition-all duration-1000 flex flex-col items-center h-full group relative overflow-hidden"
                                 >
-                                    <div className="absolute top-0 right-0 w-24 h-24 bg-[#2463eb]/5 rounded-bl-full group-hover:bg-[#2463eb]/10 transition-colors"></div>
-                                    <div className="w-16 h-16 rounded-2xl bg-[#2463eb]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-inner text-[#2463eb]">
-                                        <MapPin size={32} />
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/[0.03] rounded-bl-[80px] group-hover:bg-blue-500/10 transition-all duration-700"></div>
+                                    <div className="w-20 h-20 rounded-[28px] bg-slate-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-700 shadow-inner text-[#2463eb]">
+                                        <MapPin size={36} />
                                     </div>
-                                    <h3 className="text-xl font-display font-bold mb-4 text-[#2463eb] uppercase tracking-tight relative z-10">{location.name}</h3>
-                                    <span className="mt-auto text-[#2463eb] font-black uppercase tracking-widest text-[10px] flex items-center gap-2">
-                                        Explore Details
-                                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                                    <h3 className="text-2xl font-display font-black mb-6 text-[#0c1d37] uppercase tracking-tighter sm:tracking-tight group-hover:text-blue-600 transition-colors leading-none">{location.name}</h3>
+                                    <span className="mt-auto text-blue-500 font-black uppercase tracking-[0.25em] text-[10px] flex items-center gap-3">
+                                        Details
+                                        <ArrowRight size={16} className="group-hover:translate-x-3 transition-transform" />
                                     </span>
                                 </Link>
                             </FadeIn>
@@ -230,24 +174,22 @@ export default function AirportShuttleIndexPage() {
             </section>
 
             {/* Full Network Index */}
-            <section className="section bg-white border-y border-slate-100">
-                <div className="container-custom">
-                    <FadeIn>
-                        <div className="text-center mb-16">
-                            <h2 className="font-display text-4xl font-bold text-[#2463eb] uppercase tracking-tight">Full Metro Coverage</h2>
-                            <p className="text-lg text-[#2463eb]/50 font-medium">Over 100 cities served with local expertise and executive care.</p>
-                        </div>
+            <section className="py-32 bg-white">
+                <div className="container-custom px-4 sm:px-6">
+                    <FadeIn className="text-center max-w-4xl mx-auto mb-20">
+                        <h2 className="text-4xl md:text-6xl font-display font-black text-[#0c1d37] tracking-tight mb-8">Full Metro Coverage</h2>
+                        <p className="text-xl text-slate-500 font-light">Over 100 cities served with 40 years of local expertise.</p>
                     </FadeIn>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {locations.map((location, i) => (
                             <FadeIn key={location.slug} delay={i * 0.05}>
                                 <Link
                                     href={`/airport-shuttle/${location.slug}`}
-                                    className="p-5 rounded-2xl bg-white border border-[#2463eb]/10 flex items-center justify-between group hover:border-[#2463eb]/30 hover:shadow-sm transition-all shadow-sm"
+                                    className="p-8 rounded-[32px] bg-white border-2 border-slate-50 flex items-center justify-between group hover:border-blue-100 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500 shadow-sm"
                                 >
-                                    <span className="font-bold text-[#2463eb]/70 group-hover:text-[#2463eb] transition-colors">{location.name}</span>
-                                    <ArrowRight size={16} className="text-[#2463eb]/20 group-hover:text-[#2463eb] transition-colors -translate-x-2 group-hover:translate-x-0 opacity-0 group-hover:opacity-100" />
+                                    <span className="font-black text-[#0c1d37] text-lg tracking-tight group-hover:text-blue-600 transition-colors">{location.name}</span>
+                                    <ArrowRight size={20} className="text-slate-200 group-hover:text-blue-600 transition-all -translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0" />
                                 </Link>
                             </FadeIn>
                         ))}
@@ -255,87 +197,86 @@ export default function AirportShuttleIndexPage() {
                 </div>
             </section>
 
-            {/* Kansas City Airport Shuttle: Frequently Asked Questions */}
-            <FAQAccordion
-                title="Kansas City Airport Shuttle: Frequently Asked Questions"
-                faqs={[
-                    {
-                        q: "What is the most reliable airport shuttle service in Kansas City?",
-                        a: "Quicksilver Airport Shuttle has been the gold standard for Kansas City airport transportation since 1982. We provide 24/7 fixed-rate private car and shuttle services, ensuring you never miss a flight or wait for an unpredictable rideshare."
-                    },
-                    {
-                        q: "How much does a private airport shuttle to MCI cost?",
-                        a: "Our private airport shuttle rates are fixed and transparent. For 2026, economy transfers start at $35, while business class sedans and premium SUVs range from $55 to $75 depending on your specific destination in the KC metro area."
-                    },
-                    {
-                        q: "Do you offer 24/7 airport car service for early morning flights?",
-                        a: "Yes, Quicksilver operates 24 hours a day, 7 days a week. Our dispatchers monitor flight telemetry in real-time, ensuring your chauffeur is ready for you regardless of the hour, even for the earliest morning departures from MCI."
-                    },
-                    {
-                        q: "What is the difference between a shuttle and a private car service?",
-                        a: "A standard shuttle often involves shared rides and multiple stops. Quicksilver specializes in private, direct airport car services, meaning you have a dedicated vehicle and driver for your group with no unexpected detours."
-                    },
-                    {
-                        q: "Are Quicksilver drivers professionally vetted and insured?",
-                        a: "Every Quicksilver chauffeur is strictly background-checked, professionally trained, and carries an official ID badge. We are fully insured and bonded, providing a level of safety and reliability that exceeds standard rideshare platforms."
-                    }
-                ]}
-            />
+            {/* FAQ */}
+            <div className="py-32 bg-slate-50">
+                <div className="container-custom px-4 sm:px-6">
+                    <FadeIn className="text-center max-w-4xl mx-auto mb-20">
+                        <h2 className="text-4xl md:text-6xl font-display font-black text-[#0c1d37] tracking-tight mb-8">Service FAQ</h2>
+                    </FadeIn>
+                    <div className="max-w-4xl mx-auto">
+                        <FAQAccordion
+                            faqs={[
+                                {
+                                    q: "What is the most reliable airport shuttle in KC?",
+                                    a: "Quicksilver Airport Shuttle has been the gold standard since 1982. We provide 24/7 fixed-rate private car and shuttle services with professional chauffeurs."
+                                },
+                                {
+                                    q: "How much does a shuttle cost?",
+                                    a: "Our rates are fixed. Economy transfers start at $35, Business Saloons at $55, and Premium SUVs at $75. Use our quote tool for your specific zip code."
+                                },
+                                {
+                                    q: "Do you operate 24/7?",
+                                    a: "Yes. Our dispatchers and chauffeurs operate 24 hours a day, 365 days a year, including all holidays."
+                                },
+                                {
+                                    q: "Where do I meet my driver?",
+                                    a: "At the new MCI terminal, your driver will meet you at the designated commercial pickup zone. They will text you their exact parking pillar number."
+                                }
+                            ]}
+                        />
+                    </div>
+                </div>
+            </div>
 
-            {/* JSON-LD FAQ Schema for SEO Dominance */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "FAQPage",
-                        "mainEntity": [
-                            {
-                                "@type": "Question",
-                                "name": "What is the most reliable airport shuttle service in Kansas City?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Quicksilver Airport Shuttle has been the gold standard for Kansas City airport transportation since 1982, providing 24/7 fixed-rate private car and shuttle services."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "How much does a private airport shuttle to MCI cost?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "For 2026, economy transfers start at $35, with business class and SUV options ranging from $55 to $75 in the KC metro area."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "Do you offer 24/7 airport car service for early morning flights?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Yes, Quicksilver operates 24/7 and monitors flight telemetry in real-time to ensure punctual pick-ups for any flight time."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "What is the difference between a shuttle and a private car service?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Unlike shared shuttles, Quicksilver provides private, direct-to-destination service without extra stops."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "Are Quicksilver drivers professionally vetted and insured?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Yes, every chauffeur is background-checked, professionally trained, and Quicksilver is fully insured and bonded."
-                                }
-                            }
-                        ]
-                    })
-                }}
-            />
+            {/* Final CTA */}
+            <section className="py-32 bg-[#0c1d37] text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-[0.04]"></div>
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[180px]"></div>
 
-            {/* JSON-LD Service Schema for Airport Shuttle Service */}
+                <div className="container-custom relative z-10 px-4 sm:px-6">
+                    <FadeIn className="text-center max-w-4xl mx-auto flex flex-col items-center">
+                        <div className="w-24 h-24 rounded-[32px] bg-white/5 border border-white/10 flex items-center justify-center mb-12 backdrop-blur-xl">
+                            <Navigation size={48} className="text-white" />
+                        </div>
+
+                        <h2 className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight leading-[1.1] mb-8">
+                            Fly Confident. <br />
+                            <span className="text-blue-400">Arrive Reassured.</span>
+                        </h2>
+
+                        <p className="text-xl md:text-2xl text-slate-300 mb-12 font-light leading-relaxed">
+                            Reliable airport shuttle for every corner of the Kansas City metropolitan region.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-8 w-full justify-center">
+                            <Link
+                                href="/reservation"
+                                className="btn btn-cta text-2xl px-16 py-7 rounded-[32px] shadow-2xl shadow-orange-500/20 active:scale-95 transition-all font-black uppercase tracking-tight flex items-center justify-center gap-4 border-none bg-orange-500 hover:bg-orange-600"
+                            >
+                                <Zap size={28} />
+                                Lock In Your Pickup
+                            </Link>
+                            <a
+                                href={`tel:${phone.replace(/\D/g, '')}`}
+                                className="flex items-center justify-center gap-4 text-white hover:text-white transition-all py-7 px-16 rounded-[32px] border-2 border-white/20 hover:border-white/40 hover:bg-white/5 backdrop-blur-md font-black uppercase tracking-tight text-xl"
+                            >
+                                <Phone size={24} />
+                                <span>{phone}</span>
+                            </a>
+                        </div>
+                    </FadeIn>
+                </div>
+            </section>
+
+            {/* Mobile Sticky Label */}
+            <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
+                <a href={`tel:${phone.replace(/\D/g, '')}`} className="btn bg-[#0c1d37] text-white w-full py-5 text-2xl shadow-2xl flex items-center justify-center gap-4 hover:bg-[#122b5e] border-none rounded-2xl ring-4 ring-white">
+                    <Phone size={28} />
+                    Call Dispatch Now
+                </a>
+            </div>
+
+            {/* Structured Data */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -347,62 +288,11 @@ export default function AirportShuttleIndexPage() {
                             "@type": "LocalBusiness",
                             "name": "Quicksilver Airport Shuttle",
                             "telephone": "+19132620905",
-                            "image": "https://www.goquicksilver.com/Home%20page%20images/Airport-Shuttle-Services.webp",
                             "priceRange": "$$"
-                        },
-                        "areaServed": {
-                            "@type": "State",
-                            "name": "Kansas"
-                        },
-                        "hasOfferCatalog": {
-                            "@type": "OfferCatalog",
-                            "name": "Airport Transportation Services",
-                            "itemListElement": [
-                                {
-                                    "@type": "Offer",
-                                    "itemOffered": {
-                                        "@type": "Service",
-                                        "name": "Private Airport Sedan"
-                                    }
-                                },
-                                {
-                                    "@type": "Offer",
-                                    "itemOffered": {
-                                        "@type": "Service",
-                                        "name": "Shared-Ride Shuttle"
-                                    }
-                                }
-                            ]
                         }
                     })
                 }}
             />
-
-            {/* CTA */}
-            <section className="py-24 bg-[#2463eb] text-white text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-[120px]"></div>
-                <div className="container-custom relative z-10">
-                    <FadeIn>
-                        <h2 className="mb-8 font-display text-4xl md:text-6xl font-bold uppercase tracking-tight">Fly Confident & Reassured</h2>
-                        <p className="text-xl mb-12 text-white/80 max-w-2xl mx-auto leading-relaxed font-medium capitalize">
-                            reliable airport shuttle for every corner of the kansas city metropolitan region.
-                        </p>
-                        <Link href="/reservation" className="btn btn-cta border-none shadow-xl text-2xl px-12 py-6">
-                            Lock In Your Pickup
-                            <ArrowRight size={28} className="ml-2" />
-                        </Link>
-                    </FadeIn>
-                </div>
-            </section>
-
-            {/* Mobile Sticky Label */}
-            <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
-                <a href={`tel:${phone.replace(/\D/g, '')}`} className="btn btn-primary w-full py-5 text-2xl shadow-2xl flex items-center justify-center gap-4">
-                    <Phone size={28} />
-                    Call Dispatch Now
-                </a>
-            </div>
         </main>
     );
 }

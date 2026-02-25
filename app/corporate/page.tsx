@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Briefcase, Clock, ShieldCheck, MapPin, CheckCircle, ArrowRight, Phone, Star, Shield, DollarSign, Award } from 'lucide-react';
+import { Briefcase, Clock, ShieldCheck, MapPin, CheckCircle, ArrowRight, Phone, Star, Shield, DollarSign, Award, TrendingUp, Search } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import FadeIn from '../components/FadeIn';
@@ -16,93 +16,78 @@ export default function CorporatePage() {
     return (
         <main className="min-h-screen bg-white">
             {/* ═══ HERO SECTION — "Perfect Hero Section" framework ═══ */}
-            <section className="relative min-h-[100dvh] flex items-center overflow-hidden bg-gradient-to-br from-[#0c1d3d] via-[#122b5e] to-[#0f2044] pt-24 pb-12">
+            <section className="relative min-h-[100dvh] flex items-center overflow-hidden bg-gradient-to-br from-[#0c1d37] via-[#1a3a6b] to-[#0c1d37] pt-24 pb-12">
                 {/* Ambient Background Effects */}
                 <div className="absolute inset-0 z-0">
                     <BackgroundOverlay />
-                    <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#2463eb]/8 rounded-full blur-[180px] animate-pulse-glow pointer-events-none"></div>
-                    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-[150px] animate-float pointer-events-none"></div>
-                    <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[180px] pointer-events-none"></div>
+                    <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[600px] bg-blue-400/5 rounded-full blur-[150px] pointer-events-none"></div>
+                    <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
                 </div>
 
                 <div className="container-custom relative z-10 px-4 sm:px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center pt-8 lg:pt-0">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
 
                         {/* ═══ LEFT COLUMN: Value Proposition ═══ */}
                         <FadeIn className="text-white flex flex-col items-center lg:items-start text-center lg:text-left">
-                            {/* Badge */}
-                            <div className="inline-flex items-center gap-2 mb-7 px-5 py-2 bg-white/[0.07] backdrop-blur-xl rounded-full border border-white/[0.12] shadow-[0_0_30px_rgba(36,99,235,0.1)]">
-                                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.6)]"></div>
-                                <p className="text-[11px] font-bold tracking-[0.25em] text-white/80 uppercase">Executive Division & VIP Services</p>
+                            <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 bg-white/[0.08] backdrop-blur-3xl rounded-full border border-white/[0.15] shadow-2xl">
+                                <Briefcase size={16} className="text-blue-400" />
+                                <span className="text-[10px] sm:text-xs font-black tracking-[0.3em] text-white/90 uppercase">Executive Division</span>
                             </div>
 
-                            {/* H1 — VALUE PROPOSITION */}
-                            <h1 className="mb-4 sm:mb-6 font-display font-black leading-[1.1] text-4xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-white drop-shadow-lg text-center lg:text-left">
+                            <h1 className="mb-8 font-display font-black leading-[1.05] text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white drop-shadow-2xl">
                                 Corporate Travel, <br className="hidden sm:block" />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-blue-300 drop-shadow-xl">
-                                    Perfected.
-                                </span>
+                                <span className="text-blue-400">Perfected.</span>
                             </h1>
 
-                            {/* Supporting Copy */}
-                            <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed mb-6 sm:mb-8 max-w-xl text-center lg:text-left font-light mx-auto lg:mx-0">
-                                We specialize in dedicated accounts for Kansas City&apos;s leading executives. Punctual, discreet, and seamlessly integrated with your business itinerary.
+                            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-xl mx-auto lg:mx-0 font-light">
+                                We specialize in dedicated accounts for Kansas City's leading executives. Punctual, discreet, and seamlessly integrated with your business itinerary.
                             </p>
 
-                            {/* CTAs */}
-                            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start w-full sm:w-auto mb-10 sm:mb-12">
+                            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center lg:justify-start w-full sm:w-auto mb-16">
                                 <Link
                                     href="/contact"
-                                    className="btn btn-cta text-base sm:text-lg px-6 py-4 sm:px-9 sm:py-5 group shadow-[0_0_40px_rgba(249,115,22,0.25)] hover:shadow-[0_0_60px_rgba(249,115,22,0.45)] border-none w-full sm:w-auto flex justify-center items-center"
+                                    className="btn btn-cta text-xl px-12 py-6 rounded-3xl shadow-2xl shadow-orange-500/20 active:scale-95 transition-all font-black uppercase tracking-tight flex items-center justify-center gap-3 border-none bg-orange-500 hover:bg-orange-600 w-full sm:w-auto"
                                 >
-                                    <span>Set Up Corporate Account</span>
-                                    <ArrowRight className="ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform" size={20} />
+                                    <span>Open Account</span>
+                                    <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
                                 </Link>
                                 <a
                                     href="tel:913-262-0905"
-                                    className="group flex items-center justify-center gap-2 sm:gap-3 text-white transition-all py-4 px-6 sm:px-7 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/[0.06] backdrop-blur-sm w-full sm:w-auto"
+                                    className="flex items-center justify-center gap-4 text-white hover:text-blue-400 transition-all py-6 px-10 rounded-3xl border-2 border-white/20 hover:border-blue-400/40 backdrop-blur-md w-full sm:w-auto font-black uppercase tracking-tight"
                                 >
-                                    <Phone size={18} className="text-blue-300 group-hover:text-white transition-colors" />
-                                    <span className="font-bold tracking-wide text-sm sm:text-base">(913) 262-0905</span>
+                                    <Phone size={24} />
+                                    <span>913-262-0905</span>
                                 </a>
                             </div>
 
                             {/* Social Proof */}
-                            <div className="flex flex-col sm:flex-row items-center gap-5 mb-10 pt-8 border-t border-white/10 w-full lg:w-auto mx-auto lg:mx-0">
+                            <div className="flex flex-col sm:flex-row items-center gap-6 mb-12 pt-10 border-t border-white/10 w-full lg:w-auto mx-auto lg:mx-0">
                                 <div className="flex items-center -space-x-3">
-                                    {[
-                                        'https://randomuser.me/api/portraits/men/32.jpg',
-                                        'https://randomuser.me/api/portraits/women/44.jpg',
-                                        'https://randomuser.me/api/portraits/men/46.jpg',
-                                        'https://randomuser.me/api/portraits/women/12.jpg',
-                                        'https://randomuser.me/api/portraits/men/14.jpg'
-                                    ].map((imgSrc, i) => (
-                                        <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0f2044] shadow-lg overflow-hidden flex-shrink-0">
-                                            <img src={imgSrc} alt="Executive Client" className="w-full h-full object-cover" />
+                                    {[32, 44, 46, 12, 14].map((id, i) => (
+                                        <div key={i} className="w-12 h-12 rounded-full border-2 border-[#0c1d37] shadow-lg overflow-hidden flex-shrink-0 transition-transform hover:scale-110 hover:z-20">
+                                            <img src={`https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${id}.jpg`} alt="Client" className="w-full h-full object-cover" />
                                         </div>
                                     ))}
-                                    <div className="w-10 h-10 rounded-full bg-white/10 border-2 border-[#0f2044] flex items-center justify-center text-white/70 text-[10px] font-bold backdrop-blur-sm z-10">+4K</div>
+                                    <div className="w-12 h-12 rounded-full bg-blue-600 border-2 border-[#0c1d37] flex items-center justify-center text-white text-[10px] font-black backdrop-blur-sm z-10 shadow-lg">+4K</div>
                                 </div>
-                                <div className="flex flex-col gap-0.5 items-center sm:items-start">
-                                    <div className="flex items-center justify-center sm:justify-start gap-1 text-amber-400">
-                                        {[...Array(5)].map((_, i) => (<Star key={i} fill="currentColor" size={14} />))}
-                                        <span className="text-white/60 text-sm ml-1 font-medium">5.0/5</span>
+                                <div className="text-center sm:text-left">
+                                    <div className="flex items-center justify-center sm:justify-start gap-1 text-amber-500 mb-1">
+                                        {[...Array(5)].map((_, i) => (<Star key={i} fill="currentColor" size={16} className="drop-shadow-sm" />))}
                                     </div>
-                                    <p className="text-sm text-slate-400"><strong className="text-white/80">Rick, Scott & 4,000+ riders</strong> trust Quicksilver</p>
+                                    <p className="text-sm font-medium text-slate-400">Trusted by <strong className="text-white">Fortune 500</strong> C-Suites</p>
                                 </div>
                             </div>
 
-                            {/* Credibility Badges */}
-                            <div className="flex flex-wrap xl:flex-nowrap whitespace-nowrap items-center justify-center lg:justify-start gap-3 sm:gap-4 mx-auto lg:mx-0">
+                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                                 {[
-                                    { label: 'NDA Compliant', icon: <Shield size={16} className="text-[#2463eb]" /> },
-                                    { label: '24/7 Dispatch', icon: <Clock size={16} className="text-[#2463eb]" /> },
-                                    { label: 'Monthly Billing', icon: <DollarSign size={16} className="text-[#2463eb]" /> },
-                                    { label: 'Fortune 500 Trusted', icon: <Award size={16} className="text-amber-500" /> },
+                                    { label: 'NDA Compliant', icon: <Shield size={16} /> },
+                                    { label: '24/7 Human Dispatch', icon: <Clock size={16} /> },
+                                    { label: 'Monthly Billing', icon: <DollarSign size={16} /> },
                                 ].map((badge, i) => (
-                                    <div key={i} className="flex items-center gap-2 bg-white text-[#0f2044] px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest shadow-lg shadow-black/20 hover:-translate-y-1 transition-transform">
-                                        {badge.icon}
-                                        <span>{badge.label}</span>
+                                    <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/10 text-white/70 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest backdrop-blur-sm hover:bg-white/10 transition-colors">
+                                        <span className="text-blue-400">{badge.icon}</span>
+                                        {badge.label}
                                     </div>
                                 ))}
                             </div>
@@ -110,12 +95,9 @@ export default function CorporatePage() {
 
                         {/* ═══ RIGHT COLUMN: Hero Imagery ═══ */}
                         <FadeIn delay={0.25} className="w-full relative flex items-center justify-center pb-8 lg:pb-0">
-                            <div className="relative w-full max-w-lg lg:max-w-full mx-auto">
-                                {/* Glow behind vehicle */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-[#2463eb]/20 rounded-full blur-[80px] sm:blur-[100px] pointer-events-none"></div>
-
-                                {/* Main Vehicle Image */}
-                                <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] lg:aspect-auto lg:h-[400px] drop-shadow-[0_20px_60px_rgba(36,99,235,0.4)]">
+                            <div className="relative w-full max-w-2xl lg:max-w-full mx-auto">
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+                                <div className="relative w-full aspect-[4/3] drop-shadow-[0_40px_100px_rgba(36,99,235,0.4)]">
                                     <HeroImage
                                         src="/Home page images/Saloon Class.png"
                                         alt="Quicksilver Executive Car Service KC"
@@ -123,39 +105,56 @@ export default function CorporatePage() {
                                     />
                                 </div>
 
+                                {/* Floating Stats Card */}
+                                <div className="absolute -bottom-10 right-[5%] bg-white p-8 rounded-[40px] shadow-2xl border border-slate-100 hidden sm:block">
+                                    <div className="flex items-center gap-5">
+                                        <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center">
+                                            <TrendingUp size={28} />
+                                        </div>
+                                        <div>
+                                            <p className="text-3xl font-black text-[#0c1d37] font-display tracking-tight">99.9%</p>
+                                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">On-Time Performance</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </FadeIn>
                     </div>
                 </div>
 
-                {/* Bottom gradient fade */}
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 to-transparent z-20 pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none"></div>
             </section>
 
-
             {/* Core Features */}
-            <section className="section bg-white border-b border-[#2463eb]/10 relative">
-                <div className="container-custom">
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <FadeIn>
-                            <h2 className="text-4xl md:text-5xl font-display font-bold text-[#2463eb] uppercase tracking-tight mb-6">Built for Business</h2>
-                            <p className="text-xl text-[#2463eb]/70">Your time is your most valuable asset. Our corporate service is designed to eliminate travel friction completely.</p>
-                        </FadeIn>
-                    </div>
+            <section className="py-32 bg-white relative overflow-hidden">
+                <div className="container-custom relative z-10 px-4 sm:px-6">
+                    <FadeIn className="text-center max-w-4xl mx-auto mb-24">
+                        <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 bg-slate-50 rounded-full border border-slate-100 shadow-sm group">
+                            <Star size={16} className="text-[#2463eb] fill-[#2463eb]" />
+                            <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-500">Corporate Standards</span>
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-[#0c1d37] tracking-tight leading-[1.05] mb-8">
+                            Built for <span className="text-blue-500">Business.</span>
+                        </h2>
+                        <p className="text-xl text-slate-600 leading-relaxed font-light max-w-2xl mx-auto">
+                            Your time is your most valuable asset. Our corporate service is designed to eliminate travel friction completely.
+                        </p>
+                    </FadeIn>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-3 gap-10">
                         {[
-                            { icon: <ShieldCheck size={32} />, title: 'Vetted Chauffeurs', desc: 'Our executive drivers sign strict NDAs and undergo rigorous background checks, ensuring discretion and safety for VIP transport.' },
-                            { icon: <Clock size={32} />, title: 'On-Time Guarantee', desc: 'We utilize state-of-the-art flight tracking and local traffic algorithms. We are on site 15 minutes prior to exact pickup.' },
-                            { icon: <Briefcase size={32} />, title: 'Streamlined Billing', desc: 'Monthly invoicing, expense integrations, and corporate portals simplify travel spend for your accounting department.' }
+                            { icon: <ShieldCheck size={36} />, title: 'Vetted Chauffeurs', desc: 'Our executive drivers sign strict NDAs and undergo rigorous background checks, ensuring discretion and safety for VIP transport.' },
+                            { icon: <Clock size={36} />, title: 'On-Time Guarantee', desc: 'We utilize state-of-the-art flight tracking and local traffic algorithms. We are on site 15 minutes prior to exact pickup.' },
+                            { icon: <DollarSign size={36} />, title: 'Streamlined Billing', desc: 'Monthly invoicing, expense integrations, and corporate portals simplify travel spend for your accounting department.' }
                         ].map((feature, i) => (
                             <FadeIn key={i} delay={i * 0.1}>
-                                <div className="p-8 rounded-[30px] border border-[#2463eb]/10 bg-white hover:bg-[#2463eb] hover:shadow-xl transition-all duration-300 h-full group">
-                                    <div className="w-16 h-16 rounded-2xl bg-[#2463eb]/10 text-[#2463eb] group-hover:bg-white flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
+                                <div className="p-12 rounded-[50px] border-2 border-slate-50 bg-white hover:bg-[#0c1d37] hover:shadow-2xl transition-all duration-700 h-full group relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/[0.03] rounded-bl-[80px] group-hover:bg-blue-500/10 transition-all duration-700"></div>
+                                    <div className="w-20 h-20 rounded-[28px] bg-slate-50 text-[#2463eb] group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center mb-10 group-hover:rotate-6 transition-all duration-700 shadow-inner">
                                         {feature.icon}
                                     </div>
-                                    <h3 className="text-2xl font-bold text-[#2463eb] group-hover:text-white mb-4">{feature.title}</h3>
-                                    <p className="text-[#2463eb]/70 group-hover:text-white/80 leading-relaxed font-medium">{feature.desc}</p>
+                                    <h3 className="text-3xl font-black text-[#0c1d37] group-hover:text-white mb-6 font-display tracking-tight">{feature.title}</h3>
+                                    <p className="text-slate-500 group-hover:text-slate-300 leading-relaxed font-medium text-lg">{feature.desc}</p>
                                 </div>
                             </FadeIn>
                         ))}
@@ -163,135 +162,179 @@ export default function CorporatePage() {
                 </div>
             </section>
 
-            {/* Service Area Expansion */}
-            <section className="section bg-white border-t border-[#2463eb]/10">
-                <div className="container-custom">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* The Executive Route */}
+            <section className="py-32 bg-slate-50 relative overflow-hidden">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-blue-500/[0.02] rounded-full blur-[150px] pointer-events-none"></div>
+
+                <div className="container-custom relative z-10 px-4 sm:px-6">
+                    <div className="grid lg:grid-cols-2 gap-24 items-center">
                         <FadeIn>
-                            <div className="relative rounded-[40px] overflow-hidden aspect-square border border-[#2463eb]/10 shadow-2xl bg-[#2463eb]/5 flex items-center justify-center">
-                                <Briefcase size={120} className="text-[#2463eb] opacity-20" />
-                                <div className="absolute bottom-6 left-6 right-6 bg-white backdrop-blur-md p-6 rounded-3xl border border-[#2463eb]/20 shadow-xl">
-                                    <p className="text-[#2463eb] font-bold flex items-center gap-2">
-                                        <CheckCircle size={20} className="text-[#2463eb]" />
-                                        Direct Airport Transfers
-                                    </p>
-                                    <p className="text-[#2463eb] font-bold flex items-center gap-2 mt-2">
-                                        <CheckCircle size={20} className="text-[#2463eb]" />
-                                        Downtown Meeting Loops
-                                    </p>
+                            <div className="relative rounded-[60px] overflow-hidden aspect-square shadow-[0_50px_100px_rgba(0,0,0,0.15)] group">
+                                <Image
+                                    src="/Home page images/Business Class.png"
+                                    alt="Corporate Car Service KC"
+                                    fill
+                                    className="object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0c1d37]/60 via-transparent to-transparent opacity-60"></div>
+
+                                <div className="absolute bottom-10 left-10 right-10 flex flex-col gap-4">
+                                    <div className="bg-white/95 backdrop-blur-xl p-8 rounded-[40px] shadow-2xl border border-white/50">
+                                        <div className="space-y-4">
+                                            <p className="text-[#0c1d37] font-black flex items-center gap-4 text-lg">
+                                                <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+                                                    <CheckCircle size={18} />
+                                                </div>
+                                                Direct Airport Transfers
+                                            </p>
+                                            <p className="text-[#0c1d37] font-black flex items-center gap-4 text-lg">
+                                                <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+                                                    <CheckCircle size={18} />
+                                                </div>
+                                                Downtown Meeting Loops
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </FadeIn>
 
                         <FadeIn delay={0.2}>
-                            <h2 className="text-4xl md:text-5xl font-display font-bold text-[#2463eb] mb-6 uppercase tracking-tight">The Executive Route</h2>
-                            <p className="text-lg text-[#2463eb]/70 mb-8 leading-relaxed">
-                                Our corporate transit network connects Kansas City International Airport with major business districts. Whether it&apos;s the financial hub in Downtown KC, tech campuses in Overland Park, or corporate centers in the Northland, we provide uninterrupted connectivity.
+                            <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 bg-white rounded-full shadow-xl border border-white group">
+                                <MapPin size={16} className="text-[#2463eb]" />
+                                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-500">Regional Coverage</span>
+                            </div>
+
+                            <h2 className="text-4xl md:text-5xl lg:text-7xl font-display font-black text-[#0c1d37] mb-10 tracking-tight leading-[1.05]">
+                                The Executive <br />
+                                <span className="text-blue-500">Route.</span>
+                            </h2>
+
+                            <p className="text-xl text-slate-600 mb-12 leading-relaxed font-light">
+                                Our corporate transit network connects MCI with major business districts. Whether it's the financial hub in Downtown KC, tech campuses in Overland Park, or corporate centers in the Northland, we provide uninterrupted connectivity.
                             </p>
 
-                            <h3 className="text-xl font-bold text-[#2463eb] uppercase tracking-widest mb-4">Dedicated Corporate Routes:</h3>
-                            <ul className="grid grid-cols-2 gap-4 mb-8">
-                                {[
-                                    { href: '/airport-shuttle/kansas-city', label: 'MCI to Downtown KC' },
-                                    { href: '/airport-shuttle/overland-park', label: 'MCI to Overland Park' },
-                                    { href: '/airport-shuttle/olathe', label: 'MCI to Olathe South' },
-                                    { href: '/airport-shuttle', label: 'General Airport Shuttle' },
-                                ].map((route, i) => (
-                                    <li key={i} className="flex items-center gap-2 text-[#2463eb] font-medium hover:text-[#1d4ed8] transition-colors">
-                                        <MapPin size={18} className="text-[#2463eb]" />
-                                        <Link href={route.href}>{route.label}</Link>
-                                    </li>
-                                ))}
-                            </ul>
+                            <div className="bg-white p-10 rounded-[48px] shadow-[0_30px_60px_rgba(0,0,0,0.03)] border-2 border-white mb-12">
+                                <h3 className="text-xs font-black text-slate-300 uppercase tracking-[0.3em] mb-8">Priority Routes</h3>
+                                <div className="grid sm:grid-cols-2 gap-y-6 gap-x-10">
+                                    {[
+                                        { href: '/airport-shuttle/kansas-city', label: 'MCI to Downtown KC' },
+                                        { href: '/airport-shuttle/overland-park', label: 'MCI to Overland Park' },
+                                        { href: '/airport-shuttle/olathe', label: 'MCI to Olathe South' },
+                                        { href: '/airport-shuttle', label: 'General Airport Transit' },
+                                    ].map((route, i) => (
+                                        <Link
+                                            key={i}
+                                            href={route.href}
+                                            className="flex items-center gap-4 text-[#0c1d37] font-black hover:text-[#2463eb] transition-all group/link"
+                                        >
+                                            <div className="w-2 h-2 rounded-full bg-blue-100 group-hover/link:bg-blue-500 transition-colors"></div>
+                                            <span className="text-lg tracking-tight">{route.label}</span>
+                                            <ArrowRight size={14} className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-blue-500" />
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
 
-                            <blockquote className="p-6 bg-[#2463eb]/5 border-l-4 border-[#2463eb] rounded-r-2xl italic text-[#2463eb]/80 font-medium">
-                                &ldquo;Quicksilver has managed our C-Suite&apos;s transportation for 5 years. They are the only service in KC that consistently hits the marks for our strict SLAs.&rdquo;
-                                <span className="block mt-2 font-bold text-[#2463eb] uppercase text-xs tracking-widest">— VP of Operations, Fortune 500 Co.</span>
-                            </blockquote>
+                            <div className="bg-[#0c1d37] p-10 rounded-[48px] shadow-2xl relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.03] rounded-bl-[60px]"></div>
+                                <QuoteIcon className="absolute top-8 left-8 text-white/[0.05] pointer-events-none" size={120} />
+                                <p className="relative z-10 text-white text-xl italic font-light leading-relaxed mb-6">
+                                    "Quicksilver has managed our C-Suite's transportation for 5 years. They are the only service in KC that consistently hits the marks for our strict SLAs."
+                                </p>
+                                <p className="relative z-10 text-[10px] font-black text-blue-400 uppercase tracking-[0.3em]">
+                                    — VP of Operations, Fortune 500 Co.
+                                </p>
+                            </div>
                         </FadeIn>
                     </div>
                 </div>
             </section>
-            {/* Executive Car Service & Corporate Travel: FAQ */}
-            <FAQAccordion
-                title="Executive Car Service & Corporate Travel: FAQ"
-                faqs={[
-                    {
-                        q: "How do I set up a corporate account for my company?",
-                        a: "Setting up an executive account is simple. Contact our corporate desk at 913-262-0905 or use our contact form. We provide assigned logistics dispatchers, consolidated monthly billing, and priority booking portals for all registered enterprises."
-                    },
-                    {
-                        q: "Do you offer monthly billing for frequent business travelers?",
-                        a: "Yes, Quicksilver specializes in streamlined corporate accounting. We offer consolidated monthly invoicing and can integrate with most expense management platforms to simplify your travel logistics."
-                    },
-                    {
-                        q: "What is your SLA for on-time arrivals?",
-                        a: "We maintain a 99% on-time arrival rate. Our chauffeurs arrive at least 15 minutes prior to your scheduled pickup time, utilizing real-time flight telemetry and traffic algorithms to ensure your business schedule remains uninterrupted."
-                    },
-                    {
-                        q: "Are your executive chauffeurs background-checked and vetted?",
-                        a: "Every Quicksilver executive chauffeur is strictly background-checked, professionally trained in defensive driving, and signs a comprehensive NDA to ensure absolute discretion and security for our VIP clients."
-                    },
-                    {
-                        q: "Can you accommodate last-minute executive travel requests?",
-                        a: "Our 24/7 dedicated dispatch center is equipped to handle urgent travel changes. While we recommend booking in advance, we maintain a standby fleet for our corporate account holders to ensure availability for last-minute itinerary shifts."
-                    }
-                ]}
-            />
 
-            {/* JSON-LD FAQ Schema for SEO Dominance */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "FAQPage",
-                        "mainEntity": [
-                            {
-                                "@type": "Question",
-                                "name": "How do I set up a corporate account for my company?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Call 913-262-0905 to register for a corporate account which includes monthly billing, priority dispatch, and a dedicated logisitcs manager."
+            {/* Corporate FAQ */}
+            <div className="py-32 bg-white">
+                <div className="container-custom px-4 sm:px-6">
+                    <FadeIn className="text-center max-w-4xl mx-auto mb-20">
+                        <h2 className="text-4xl md:text-6xl font-display font-black text-[#0c1d37] tracking-tight mb-8">Executive FAQ</h2>
+                        <p className="text-lg text-slate-500 font-medium">Specific answers for corporate logistics managers and executive assistants.</p>
+                    </FadeIn>
+                    <div className="max-w-4xl mx-auto">
+                        <FAQAccordion
+                            faqs={[
+                                {
+                                    q: "How do I set up a corporate account?",
+                                    a: "Setting up an executive account is simple. Contact our corporate desk at 913-262-0905 or use our contact form. We provide assigned logistics dispatchers, consolidated monthly billing, and priority booking portals for all registered enterprises."
+                                },
+                                {
+                                    q: "Do you offer monthly billing?",
+                                    a: "Yes, Quicksilver specializes in streamlined corporate accounting. We offer consolidated monthly invoicing and can integrate with most expense management platforms to simplify your travel logistics."
+                                },
+                                {
+                                    q: "What is your SLA for on-time arrivals?",
+                                    a: "We maintain a 99.9% on-time performance rate. Our chauffeurs arrive at least 15 minutes prior to your scheduled pickup time, utilizing real-time flight telemetry and traffic algorithms to ensure your business schedule remains uninterrupted."
+                                },
+                                {
+                                    q: "Are chauffeurs background-checked?",
+                                    a: "Every Quicksilver executive chauffeur is strictly background-checked, professionally trained in defensive driving, and signs a comprehensive NDA to ensure absolute discretion and security for our VIP clients."
+                                },
+                                {
+                                    q: "Can you accommodate last-minute requests?",
+                                    a: "Our 24/7 dedicated dispatch center is equipped to handle urgent travel changes. While we recommend booking in advance, we maintain a standby fleet for our corporate account holders to ensure availability for last-minute itinerary shifts."
                                 }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "Do you offer monthly billing for frequent business travelers?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Yes, we provide consolidated monthly invoicing and expense reporting for all registered corporate partners."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "What is your SLA for on-time arrivals?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "We maintain a 99% on-time record with chauffeurs arriving 15 minutes ahead of schedule as standard practice."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "Are your executive chauffeurs background-checked and vetted?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "Yes, all chauffeurs undergo rigorous vetting, background checks, and periodic training to maintain executive standards."
-                                }
-                            },
-                            {
-                                "@type": "Question",
-                                "name": "Can you accommodate last-minute executive travel requests?",
-                                "acceptedAnswer": {
-                                    "@type": "Answer",
-                                    "text": "We offer priority standby service for corporate account holders to handle urgent, last-minute travel needs 24/7."
-                                }
-                            }
-                        ]
-                    })
-                }}
-            />
-            {/* JSON-LD Service Schema for Corporate Car Service */}
+                            ]}
+                        />
+                    </div>
+                </div>
+            </div>
+
+            {/* ═══ FOOTER CTA ═══ */}
+            <section className="py-32 bg-[#0c1d37] text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-[0.04]"></div>
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[180px]"></div>
+
+                <div className="container-custom relative z-10 px-4 sm:px-6">
+                    <FadeIn className="text-center max-w-4xl mx-auto flex flex-col items-center">
+                        <div className="w-24 h-24 rounded-[32px] bg-white/5 border border-white/10 flex items-center justify-center mb-12 backdrop-blur-xl">
+                            <Briefcase size={48} className="text-white" />
+                        </div>
+
+                        <h2 className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight leading-[1.1] mb-8">
+                            Empower Your <span className="text-blue-400">Mobile Office.</span>
+                        </h2>
+
+                        <p className="text-xl md:text-2xl text-slate-300 mb-12 font-light leading-relaxed">
+                            Join over 500 Kansas City corporations who trust Quicksilver for their high-stakes transportation needs.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-8 w-full justify-center">
+                            <Link
+                                href="/contact"
+                                className="btn btn-cta text-2xl px-16 py-7 rounded-[32px] shadow-2xl shadow-orange-500/20 active:scale-95 transition-all font-black uppercase tracking-tight flex items-center justify-center gap-4 border-none bg-orange-500 hover:bg-orange-600"
+                            >
+                                <Award size={28} />
+                                Apply For Account
+                            </Link>
+                            <a
+                                href="tel:913-262-0905"
+                                className="flex items-center justify-center gap-4 text-white hover:text-white transition-all py-7 px-16 rounded-[32px] border-2 border-white/20 hover:border-white/40 hover:bg-white/5 backdrop-blur-md font-black uppercase tracking-tight text-xl"
+                            >
+                                <Phone size={24} />
+                                <span>Speak to a Manager</span>
+                            </a>
+                        </div>
+                    </FadeIn>
+                </div>
+            </section>
+
+            {/* Mobile Sticky Label */}
+            <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
+                <a href="tel:913-262-0905" className="btn bg-[#0c1d37] text-white w-full py-5 text-2xl shadow-2xl flex items-center justify-center gap-4 hover:bg-[#122b5e] border-none rounded-2xl ring-4 ring-white">
+                    <Phone size={28} />
+                    Call Executive Desk
+                </a>
+            </div>
+
+            {/* Structured Data */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -302,21 +345,36 @@ export default function CorporatePage() {
                         "provider": {
                             "@type": "LocalBusiness",
                             "name": "Quicksilver Airport Shuttle",
-                            "telephone": "+19132620905"
+                            "telephone": "+19132620905",
+                            "priceRange": "$$$"
                         },
-                        "areaServed": "Kansas City Metro",
-                        "description": "Executive transportation and corporate car services for businesses in Kansas City."
+                        "areaServed": {
+                            "@type": "State",
+                            "name": "Kansas"
+                        },
+                        "description": "Premium executive car service and corporate transportation for Kansas City businesses."
                     })
                 }}
             />
-
-            {/* Mobile Sticky Label */}
-            <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
-                <a href="tel:913-262-0905" className="btn bg-[#0c1d37] text-white w-full py-5 text-2xl shadow-2xl flex items-center justify-center gap-4 hover:bg-[#122b5e] border-none">
-                    <Phone size={28} />
-                    Call Executive Desk
-                </a>
-            </div>
         </main>
+    );
+}
+
+function QuoteIcon({ className, size }: { className?: string, size?: number }) {
+    return (
+        <svg
+            width={size || 40}
+            height={size || 40}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={className}
+        >
+            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3c.5 1.5-1.5 3.5-3.5 4.5-.5.25-.5 1 .5 1z" />
+            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3c.5 1.5-1.5 3.5-3.5 4.5-.5.25-.5 1 .5 1z" />
+        </svg>
     );
 }

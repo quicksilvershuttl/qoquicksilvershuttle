@@ -1,55 +1,80 @@
 'use client';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, HelpCircle, ArrowRight } from 'lucide-react';
 import FadeIn from '../FadeIn';
+import Link from 'next/link';
 
 export default function FAQSection() {
     return (
-        <section className="py-24 bg-white relative">
-            <div className="container-custom max-w-4xl mx-auto">
-                <FadeIn className="text-center mb-16">
-                    <h2 className="mb-6 font-display text-4xl md:text-5xl text-[#2463eb] tracking-tight font-black">
-                        Frequently Asked Questions
+        <section className="py-32 bg-white relative overflow-hidden">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/[0.02] rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div className="container-custom max-w-5xl mx-auto relative z-10 px-4 sm:px-6">
+                <FadeIn className="text-center mb-24 max-w-4xl mx-auto">
+                    <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 bg-slate-50 rounded-full border border-slate-100 shadow-sm group">
+                        <HelpCircle size={16} className="text-[#2463eb] group-hover:rotate-12 transition-transform" />
+                        <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-500">Service Transparency</span>
+                    </div>
+
+                    <h2 className="mb-8 font-display text-4xl sm:text-5xl md:text-7xl font-black text-[#2463eb] tracking-tight leading-[1.05]">
+                        Frequently Asked <br className="hidden sm:block" />
+                        <span className="text-blue-500">Questions.</span>
                     </h2>
-                    <p className="text-xl text-slate-600 leading-relaxed font-light">
-                        Clear answers to your most pressing questions about our Kansas City airport shuttle services.
+
+                    <p className="text-xl text-slate-600 leading-relaxed font-light max-w-2xl mx-auto">
+                        Clear, definitive answers to help you navigate your Kansas City airport transportation with absolute confidence.
                     </p>
                 </FadeIn>
 
-                <div className="space-y-4">
+                <div className="space-y-6 max-w-4xl mx-auto">
                     {[
                         {
                             q: "How much does an airport shuttle in Kansas City cost in 2026?",
-                            a: "Quicksilver Airport Shuttle offers fixed 2026 rates starting from $35 for economy transfers, $55 for business class sedans, and $75 for premium SUVs to and from MCI Airport. Our rates are completely transparent with no hidden surge fees."
+                            a: "Quicksilver Airport Shuttle offers fixed 2026 rates starting from $35 for economy transfers, $55 for business class sedans, and $75 for premium SUVs. Unlike rideshare platforms, our rates are fixed and predictable."
                         },
                         {
-                            q: "How do I book an airport shuttle to MCI in Kansas City?",
-                            a: "You can seamlessly book your Quicksilver airport shuttle or car service online through our digital reservation system or call our 24/7 dispatch at 913-262-0905. We highly recommend booking at least 24 hours in advance."
+                            q: "How do I book an airport shuttle to MCI?",
+                            a: "You can book through our secure online reservation system or via our 24/7 human-operated dispatch at 913-262-0905. We recommend booking 24 hours in advance to guarantee vehicle availability."
                         },
                         {
-                            q: "Are there discounted university shuttle rates in Kansas?",
-                            a: "Yes, Quicksilver offers specialized, direct shuttle routes for university students across Kansas and Missouri at fixed rates, including Baker University, Benedictine College, and Bethany College."
+                            q: "What happens if my flight to MCI is delayed?",
+                            a: "Our dispatch center monitors live flight telemetry via satellite tracking. If your flight is delayed, diverted, or arrives early, your chauffeur dynamically adjusts. We will be there exactly when you touch down, guaranteed."
                         },
                         {
-                            q: "What happens if my flight is delayed?",
-                            a: "Our dispatch team monitors live flight telemetry for all Kansas City International Airport (MCI) arrivals. If your flight is delayed or arrives early, your chauffeur will adjust their schedule to be there exactly when you land, at no extra cost."
+                            q: "Are there discounted university shuttle rates?",
+                            a: "Yes. We maintain strategic transit partnerships with major institutions including KU, K-State, and Baker University. We offer specialized, fixed-rate student routes across the entire Mid-West region."
                         },
                         {
-                            q: "Does Quicksilver provide pet-friendly airport transportation?",
-                            a: "Yes, we offer pet-friendly airport shuttle services across Kansas City. We only ask that your pets are safely secured in a travel carrier during transit to ensure the comfort and safety of all passengers and our chauffeurs."
+                            q: "Is Quicksilver pet-friendly?",
+                            a: "Absolutely. We provide pet-friendly transportation across the KC Metro. We simply require pets to be safely secured in a travel carrier for the comfort and safety of both passengers and our chauffeurs."
                         }
                     ].map((faq, i) => (
                         <FadeIn key={i} delay={i * 0.1}>
-                            <details className="group bg-slate-50 border border-white rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden ring-1 ring-[#2463eb]/5">
-                                <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-bold text-[#2463eb] text-lg font-display">
-                                    {faq.q}
-                                    <ChevronDown className="text-[#2463eb] transition-transform duration-300 group-open:rotate-180" size={24} />
+                            <details className="group bg-white border-2 border-slate-50 rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_30px_70px_rgba(36,99,235,0.08)] hover:border-blue-50 transition-all duration-500 overflow-hidden ring-1 ring-slate-100">
+                                <summary className="flex items-center justify-between p-10 cursor-pointer list-none font-black text-[#2463eb] text-lg md:text-2xl font-display tracking-tight group-open:bg-blue-50/30 transition-colors">
+                                    <span className="pr-10">{faq.q}</span>
+                                    <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-[#2463eb] group-hover:bg-[#2463eb] group-hover:text-white transition-all duration-500 group-open:rotate-180 flex-shrink-0">
+                                        <ChevronDown size={24} />
+                                    </div>
                                 </summary>
-                                <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-[#2463eb]/10 pt-4 bg-white">
-                                    {faq.a}
+                                <div className="px-10 pb-12 pt-6 text-slate-500 text-lg leading-relaxed font-medium bg-white">
+                                    <div className="pl-0 md:pl-4 border-l-4 border-blue-100 italic">
+                                        {faq.a}
+                                    </div>
+                                    <div className="mt-10">
+                                        <Link href="/faq" className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#2463eb] hover:gap-4 transition-all">
+                                            Read More Details <ArrowRight size={14} />
+                                        </Link>
+                                    </div>
                                 </div>
                             </details>
                         </FadeIn>
                     ))}
+                </div>
+
+                <div className="mt-20 text-center">
+                    <Link href="/faq" className="text-sm font-black text-slate-400 uppercase tracking-[0.35em] hover:text-[#2463eb] transition-colors">
+                        View Complete Knowledge Base
+                    </Link>
                 </div>
             </div>
         </section>

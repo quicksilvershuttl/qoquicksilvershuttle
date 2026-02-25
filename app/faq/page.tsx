@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { HelpCircle, Phone, ArrowRight, Shield, Clock, Award, Star } from 'lucide-react';
+import { HelpCircle, Phone, ArrowRight, Shield, Clock, Award, Star, MessageSquareQuote } from 'lucide-react';
 import Link from 'next/link';
 import FadeIn from '../components/FadeIn';
 import HeroImage from '../components/HeroImage';
@@ -7,194 +7,182 @@ import BackgroundOverlay from '../components/BackgroundOverlay';
 import { faqs } from '../data/faqs';
 
 export const metadata: Metadata = {
-    title: 'Airport Shuttle FAQ | Airport Car Service Questions | Quicksilver Airport car',
-    description: 'Answers to all your questions about Quicksilver Kansas City airport shuttle. Pricing, booking, policies — all in one place. Serving KC since 1982.',
+    title: 'Airport Shuttle FAQ | Kansas City Airport Car Service Questions | Quicksilver',
+    description: 'Expert answers to your Kansas City airport shuttle questions. Pricing, flight tracking, 24/7 booking, and more. Serving MCI since 1982.',
 };
 
 export default function FAQPage() {
     return (
         <main className="min-h-screen bg-white">
             {/* ═══ HERO SECTION — Perfect Hero Section framework ═══ */}
-            <section className="relative min-h-[100dvh] flex items-center overflow-hidden bg-gradient-to-br from-[#0c1d3d] via-[#122b5e] to-[#0f2044] pt-24 pb-12">
+            <section className="relative min-h-[90dvh] flex items-center overflow-hidden bg-gradient-to-br from-[#0c1d37] via-[#1a3a6b] to-[#0c1d37] pt-32 pb-24">
                 <div className="absolute inset-0 z-0">
                     <BackgroundOverlay />
-                    <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[180px] animate-pulse-glow pointer-events-none"></div>
-                    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-[150px] animate-float pointer-events-none"></div>
-                    <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[180px] pointer-events-none"></div>
+                    <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[600px] bg-blue-400/5 rounded-full blur-[150px] pointer-events-none"></div>
+                    <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
                 </div>
 
                 <div className="container-custom relative z-10 px-4 sm:px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center pt-8 lg:pt-0">
-
-                        {/* LEFT COLUMN */}
-                        <FadeIn className="text-white flex flex-col items-center lg:items-start text-center lg:text-left">
-                            <div className="inline-flex items-center gap-2 mb-7 px-5 py-2 bg-white/[0.07] backdrop-blur-xl rounded-full border border-white/[0.12] shadow-[0_0_30px_rgba(36,99,235,0.1)]">
-                                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.6)]"></div>
-                                <p className="text-[11px] font-bold tracking-[0.25em] text-white/80 uppercase">Knowledge Base · Since 1982</p>
+                    <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+                        <FadeIn>
+                            <div className="inline-flex items-center gap-2 mb-10 px-6 py-2.5 bg-white/[0.08] backdrop-blur-3xl rounded-full border border-white/[0.15] shadow-2xl">
+                                <HelpCircle size={18} className="text-blue-400" />
+                                <span className="text-[10px] sm:text-xs font-black tracking-[0.3em] text-white/90 uppercase">Transit Knowledge Base</span>
                             </div>
 
-                            <h1 className="mb-4 sm:mb-6 font-display font-black leading-[1.1] text-4xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-white drop-shadow-lg text-center lg:text-left">
+                            <h1 className="mb-8 font-display font-black leading-[1.05] text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white drop-shadow-2xl">
                                 Got Questions? <br className="hidden sm:block" />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-blue-300 drop-shadow-xl">
-                                    We Have Answers.
-                                </span>
+                                <span className="text-blue-400">We Have Answers.</span>
                             </h1>
 
-                            <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed mb-6 sm:mb-8 max-w-xl text-center lg:text-left font-light mx-auto lg:mx-0">
-                                Everything you need to know about your premium Kansas City airport transportation — pricing, booking, policies, and logistics.
+                            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-3xl mx-auto font-light">
+                                Definitive insights into your Kansas City airport transportation – from fixed pricing and flight tracking to executive logistics.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start w-full sm:w-auto mb-10 sm:mb-12">
-                                <a
-                                    href="#faqs"
-                                    className="btn btn-cta text-base sm:text-lg px-6 py-4 sm:px-9 sm:py-5 group shadow-[0_0_40px_rgba(249,115,22,0.25)] hover:shadow-[0_0_60px_rgba(249,115,22,0.45)] border-none w-full sm:w-auto flex justify-center items-center"
+                            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center mb-16">
+                                <Link
+                                    href="/reservation"
+                                    className="btn btn-cta text-xl px-12 py-6 rounded-3xl shadow-2xl shadow-orange-500/20 active:scale-95 transition-all font-black uppercase tracking-tight flex items-center justify-center gap-3 border-none bg-orange-500 hover:bg-orange-600 w-full sm:w-auto"
                                 >
-                                    <span>Browse All FAQs</span>
-                                    <ArrowRight className="ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform" size={20} />
-                                </a>
+                                    <span>Reserve Your Ride</span>
+                                    <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+                                </Link>
                                 <a
                                     href="tel:913-262-0905"
-                                    className="group flex items-center justify-center gap-2 sm:gap-3 text-white transition-all py-4 px-6 sm:px-7 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/[0.06] backdrop-blur-sm w-full sm:w-auto"
+                                    className="flex items-center justify-center gap-4 text-white hover:text-blue-400 transition-all py-6 px-10 rounded-3xl border-2 border-white/20 hover:border-blue-400/40 backdrop-blur-md w-full sm:w-auto font-black uppercase tracking-tight"
                                 >
-                                    <Phone size={18} className="text-blue-300 group-hover:text-white transition-colors" />
-                                    <span className="font-bold tracking-wide text-sm sm:text-base">(913) 262-0905</span>
+                                    <Phone size={24} />
+                                    <span>913-262-0905</span>
                                 </a>
                             </div>
 
-                            {/* Social Proof — identical to homepage */}
-                            <div className="flex flex-col sm:flex-row items-center gap-5 mb-10 pt-8 border-t border-white/10 w-full lg:w-auto mx-auto lg:mx-0">
-                                <div className="flex items-center -space-x-3">
-                                    {[
-                                        'https://randomuser.me/api/portraits/men/32.jpg',
-                                        'https://randomuser.me/api/portraits/women/44.jpg',
-                                        'https://randomuser.me/api/portraits/men/46.jpg',
-                                        'https://randomuser.me/api/portraits/women/12.jpg',
-                                        'https://randomuser.me/api/portraits/men/14.jpg'
-                                    ].map((imgSrc, i) => (
-                                        <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0f2044] shadow-lg overflow-hidden flex-shrink-0">
-                                            <img src={imgSrc} alt="Customer" className="w-full h-full object-cover" />
-                                        </div>
-                                    ))}
-                                    <div className="w-10 h-10 rounded-full bg-white/10 border-2 border-[#0f2044] flex items-center justify-center text-white/70 text-[10px] font-bold backdrop-blur-sm z-10">+4K</div>
-                                </div>
-                                <div className="flex flex-col gap-0.5 items-center sm:items-start">
-                                    <div className="flex items-center justify-center sm:justify-start gap-1 text-amber-400">
-                                        {[...Array(5)].map((_, i) => (<Star key={i} fill="currentColor" size={14} />))}
-                                        <span className="text-white/60 text-sm ml-1 font-medium">4.8/5</span>
-                                    </div>
-                                    <p className="text-sm text-slate-400"><strong className="text-white/80">Rick, Scott & 4,000+ riders</strong> trust Quicksilver</p>
-                                </div>
-                            </div>
-
-                            <div className="flex flex-wrap xl:flex-nowrap whitespace-nowrap items-center justify-center lg:justify-start gap-3 sm:gap-4 mx-auto lg:mx-0">
+                            <div className="flex flex-wrap justify-center gap-4">
                                 {[
-                                    { label: 'Fully Insured', icon: <Shield size={16} className="text-[#2463eb]" /> },
-                                    { label: '24/7 Dispatch', icon: <Clock size={16} className="text-[#2463eb]" /> },
-                                    { label: 'Fixed Pricing', icon: <HelpCircle size={16} className="text-[#2463eb]" /> },
-                                    { label: 'TripAdvisor ★', icon: <Award size={16} className="text-amber-500" /> },
+                                    { label: 'Licensed & Insured', icon: <Shield size={16} /> },
+                                    { label: '24/7 Human Dispatch', icon: <Clock size={16} /> },
+                                    { label: 'Flight Tracking', icon: <Award size={16} /> },
+                                    { label: 'Google 4.8★', icon: <Star size={16} className="fill-amber-500 text-amber-500" /> },
                                 ].map((badge, i) => (
-                                    <div key={i} className="flex items-center gap-2 bg-white text-[#0f2044] px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest shadow-lg shadow-black/20 hover:-translate-y-1 transition-transform">
-                                        {badge.icon}
-                                        <span>{badge.label}</span>
+                                    <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/10 text-white/70 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest backdrop-blur-sm">
+                                        <span className="text-blue-400">{badge.icon}</span>
+                                        {badge.label}
                                     </div>
                                 ))}
                             </div>
                         </FadeIn>
-
-                        {/* RIGHT COLUMN — identical to homepage: no floating card */}
-                        <FadeIn delay={0.25} className="w-full relative flex items-center justify-center pb-8 lg:pb-0">
-                            <div className="relative w-full max-w-lg lg:max-w-full mx-auto">
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-[#2463eb]/20 rounded-full blur-[80px] sm:blur-[100px] pointer-events-none"></div>
-                                <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] lg:aspect-auto lg:h-[400px] drop-shadow-[0_20px_60px_rgba(36,99,235,0.4)]">
-                                    <HeroImage
-                                        src="/Home page images/Saloon Class.png"
-                                        alt="Quicksilver Kansas City airport shuttle FAQ"
-                                        priority
-                                    />
-                                </div>
-                            </div>
-                        </FadeIn>
                     </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 to-transparent z-20 pointer-events-none"></div>
             </section>
 
             {/* ═══ CATEGORY NAV ═══ */}
-            <section id="faqs" className="py-12 bg-slate-50 border-b border-slate-200 scroll-mt-24">
+            <section className="py-20 bg-slate-50 border-y border-slate-100 sticky top-20 z-40 backdrop-blur-xl bg-white/80">
                 <div className="container-custom">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="flex overflow-x-auto pb-4 sm:pb-0 hide-scrollbar gap-4 sm:justify-center">
                         {faqs.map((cat, idx) => (
                             <a
                                 key={idx}
-                                href={`#${cat.category.toLowerCase().replace(/\s+/g, '-')}`}
-                                className="p-4 bg-white rounded-2xl border border-slate-200 text-center hover:border-blue-600 hover:shadow-md transition-all group"
+                                href={`#${cat.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                                className="px-8 py-4 bg-white rounded-2xl border-2 border-slate-100 text-center whitespace-nowrap hover:border-[#2463eb] hover:shadow-xl hover:shadow-blue-500/5 transition-all text-xs font-black uppercase tracking-widest text-slate-400 hover:text-[#2463eb]"
                             >
-                                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1 group-hover:text-blue-600">Category</p>
-                                <p className="text-sm font-bold text-slate-800 line-clamp-1">{cat.category}</p>
+                                {cat.category}
                             </a>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* FAQ Content */}
-            <section className="section bg-white">
-                <div className="container-custom">
-                    <div className="max-w-5xl mx-auto">
-                        {faqs.map((category, categoryIndex) => (
-                            <div
-                                key={categoryIndex}
-                                id={category.category.toLowerCase().replace(/\s+/g, '-')}
-                                className="mb-24 scroll-mt-32"
-                            >
-                                <FadeIn>
-                                    <div className="flex items-center gap-6 mb-12">
-                                        <div className="h-px flex-1 bg-slate-200"></div>
-                                        <h2 className="text-2xl md:text-3xl font-display font-black text-[#0c1d37] uppercase tracking-tight px-6 py-3 bg-slate-50 rounded-full border border-slate-200">
-                                            {category.category}
-                                        </h2>
-                                        <div className="h-px flex-1 bg-slate-200"></div>
-                                    </div>
+            {/* ═══ FAQ CONTENT ═══ */}
+            <section className="py-32 bg-white">
+                <div className="container-custom max-w-6xl mx-auto px-4 sm:px-6">
+                    {faqs.map((category, categoryIndex) => (
+                        <div
+                            key={categoryIndex}
+                            id={category.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
+                            className="mb-32 scroll-mt-48"
+                        >
+                            <FadeIn>
+                                <div className="flex items-center gap-8 mb-16">
+                                    <h2 className="text-3xl md:text-4xl font-display font-black text-[#0c1d37] tracking-tight">
+                                        {category.category}
+                                    </h2>
+                                    <div className="h-0.5 flex-1 bg-gradient-to-r from-blue-100 to-transparent"></div>
+                                </div>
 
-                                    <div className="grid gap-8 lg:grid-cols-2">
-                                        {category.questions.map((faq, faqIndex) => (
-                                            <div
-                                                key={faqIndex}
-                                                className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-lg hover:border-blue-100 transition-all group"
-                                            >
-                                                <h3 className="font-display font-black text-[#0c1d37] mb-4 text-xl leading-snug group-hover:text-blue-600 transition-colors">
-                                                    {faq.question}
-                                                </h3>
-                                                <p className="text-slate-500 leading-relaxed font-medium">{faq.answer}</p>
+                                <div className="grid gap-10 md:grid-cols-2">
+                                    {category.questions.map((faq, faqIndex) => (
+                                        <div
+                                            key={faqIndex}
+                                            className="bg-white p-10 rounded-[48px] border-2 border-slate-50 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_100px_rgba(36,99,235,0.08)] hover:border-blue-50 transition-all duration-700 group flex flex-col h-full ring-1 ring-slate-100"
+                                        >
+                                            <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-[#2463eb] mb-8 group-hover:bg-[#2463eb] group-hover:text-white transition-all duration-700 shadow-inner">
+                                                <MessageSquareQuote size={24} />
                                             </div>
-                                        ))}
-                                    </div>
-                                </FadeIn>
-                            </div>
-                        ))}
-                    </div>
+
+                                            <h3 className="font-display font-black text-[#0c1d37] mb-6 text-2xl leading-tight group-hover:text-[#2463eb] transition-colors">
+                                                {faq.question}
+                                            </h3>
+
+                                            <div className="flex-grow text-slate-500 text-lg leading-relaxed font-medium">
+                                                <div className="pl-6 border-l-4 border-slate-100 italic transition-colors group-hover:border-blue-100">
+                                                    {faq.answer}
+                                                </div>
+                                            </div>
+
+                                            {faq.linkUrl && (
+                                                <div className="mt-10 pt-8 border-t border-slate-50">
+                                                    <Link
+                                                        href={faq.linkUrl}
+                                                        className="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.25em] text-[#2463eb] hover:gap-5 transition-all"
+                                                    >
+                                                        {faq.linkText || 'Learn More'}
+                                                        <ArrowRight size={16} />
+                                                    </Link>
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            </FadeIn>
+                        </div>
+                    ))}
                 </div>
             </section>
 
-            {/* Still Have Questions */}
-            <section className="py-24 bg-[#0c1d37] text-white relative overflow-hidden">
+            {/* ═══ FINAL CTA ═══ */}
+            <section className="py-32 bg-[#0c1d37] text-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-[0.04]"></div>
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[150px]"></div>
-                <div className="container-custom relative z-10 text-center">
-                    <FadeIn>
-                        <h2 className="font-display font-black text-4xl md:text-5xl text-white uppercase tracking-tight mb-6">
-                            Still Have Questions?
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[180px]"></div>
+
+                <div className="container-custom relative z-10 px-4 sm:px-6">
+                    <FadeIn className="text-center max-w-4xl mx-auto flex flex-col items-center">
+                        <div className="w-24 h-24 rounded-[32px] bg-white/5 border border-white/10 flex items-center justify-center mb-12 backdrop-blur-xl">
+                            <Phone size={48} className="text-white" />
+                        </div>
+
+                        <h2 className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight leading-[1.1] mb-8">
+                            Still Have Questions? <br />
+                            <span className="text-blue-400">Our Experts Are Standby.</span>
                         </h2>
-                        <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-medium">
-                            Our dispatch team is available 24/7. Call us directly for reservations or any travel questions.
+
+                        <p className="text-xl md:text-2xl text-slate-300 mb-12 font-light leading-relaxed">
+                            Our human-operated dispatch team is available 24/7. Call us directly for custom group logistics or immediate roadside assistance.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="tel:913-262-0905" className="btn btn-cta border-none shadow-xl inline-flex items-center gap-3">
-                                <Phone size={22} />
+
+                        <div className="flex flex-col sm:flex-row gap-8 w-full justify-center">
+                            <a
+                                href="tel:913-262-0905"
+                                className="btn btn-cta text-2xl px-16 py-7 rounded-[32px] shadow-2xl shadow-orange-500/20 active:scale-95 transition-all font-black uppercase tracking-tight flex items-center justify-center gap-4 border-none bg-orange-500 hover:bg-orange-600"
+                            >
+                                <Phone size={28} />
                                 (913) 262-0905
                             </a>
-                            <Link href="/reservation" className="btn bg-white/10 border border-white/20 text-white hover:bg-white/20 inline-flex items-center gap-2">
-                                Book Online <ArrowRight size={18} />
+                            <Link
+                                href="/reservation"
+                                className="flex items-center justify-center gap-4 text-white hover:text-white transition-all py-7 px-16 rounded-[32px] border-2 border-white/20 hover:border-white/40 hover:bg-white/5 backdrop-blur-md font-black uppercase tracking-tight text-xl"
+                            >
+                                <span>Book Online</span>
+                                <ArrowRight size={24} />
                             </Link>
                         </div>
                     </FadeIn>

@@ -10,6 +10,9 @@ import {
 import Link from 'next/link';
 import FadeIn from '../../components/FadeIn';
 import HeroImage from '../../components/HeroImage';
+import BackgroundOverlay from '../../components/BackgroundOverlay';
+import TrustAvatars from '../../components/TrustAvatars';
+
 
 // Location data mapping for Quicksilver
 const locationData: Record<string, any> = {
@@ -326,135 +329,93 @@ export default async function ServiceAreaPage({ params }: Props) {
             </div>
 
             {/* ═══════════════════════════════════════════════════════════════
-                HERO SECTION — "Perfect Hero Section" framework:
-                Step 1: Clear Value Proposition (location-specific headline)
-                Step 2: Split Layout (text left, imagery right)
-                Step 3: Creative Concept (vehicle + floating cards)
-                Step 4: Developed Imagery (Saloon Class vehicle)
-                Step 5: Design System (typography, colors, button hierarchy)
-                Step 6: Optimization (social proof, free CTA, credibility logos)
+                HERO SECTION — "Perfect Hero Section" framework
              ═══════════════════════════════════════════════════════════════ */}
-            <section className="relative min-h-[100dvh] flex items-center overflow-hidden bg-gradient-to-br from-[#0c1d3d] via-[#122b5e] to-[#0f2044] pt-24 pb-12">
+            <section className="relative min-h-[90dvh] flex items-center overflow-hidden bg-gradient-to-br from-[#0c1d37] via-[#1a3a6b] to-[#0c1d37] pt-24 pb-12">
                 {/* Ambient Background Effects */}
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-[url('/Home%20page%20images/Airport-Shuttle-Services.webp')] bg-cover bg-center opacity-[0.06]"></div>
-                    <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-blue-600/10 rounded-full blur-[180px] animate-pulse-glow pointer-events-none"></div>
-                    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-[150px] animate-float pointer-events-none"></div>
-                    <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+                    <BackgroundOverlay />
+                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[180px] pointer-events-none"></div>
+                    <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[600px] bg-blue-400/5 rounded-full blur-[150px] pointer-events-none"></div>
+                    <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
                 </div>
 
                 <div className="container-custom relative z-10 px-4 sm:px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center pt-8 lg:pt-0">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
 
-                        {/* ═══ LEFT COLUMN: Value Proposition + CTAs + Social Proof ═══ */}
+                        {/* ═══ LEFT COLUMN: Value Proposition ═══ */}
                         <FadeIn className="text-white flex flex-col items-center lg:items-start text-center lg:text-left">
-
-                            {/* Badge — Eyebrow copy */}
-                            <div className="inline-flex items-center gap-2 mb-7 px-5 py-2 bg-white/[0.07] backdrop-blur-xl rounded-full border border-white/[0.12] shadow-[0_0_30px_rgba(36,99,235,0.1)]">
-                                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.6)]"></div>
-                                <p className="text-[11px] font-bold tracking-[0.25em] text-white/80 uppercase">Premium {data.region} Dispatch · Since 1982</p>
+                            <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 bg-white/[0.08] backdrop-blur-3xl rounded-full border border-white/[0.15] shadow-2xl">
+                                <MapPin size={16} className="text-blue-400" />
+                                <span className="text-[10px] sm:text-xs font-black tracking-[0.3em] text-white/90 uppercase">{data.name} Division · Since 1982</span>
                             </div>
 
-                            {/* H1 — VALUE PROPOSITION */}
-                            <h1 className="mb-4 sm:mb-6 font-display font-black leading-[1.05] text-4xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-white drop-shadow-lg text-center lg:text-left">
-                                {locationName}&apos;s <br className="hidden sm:block" />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-blue-300 drop-shadow-xl">
-                                    Airport Shuttle.
-                                </span>
+                            <h1 className="mb-8 font-display font-black leading-[1.05] text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-white drop-shadow-2xl uppercase">
+                                {data.name} <br className="hidden sm:block" />
+                                <span className="text-blue-400">Airport Shuttle.</span>
                             </h1>
 
-                            {/* Supporting Copy */}
-                            <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed mb-6 sm:mb-8 max-w-xl text-center lg:text-left font-light mx-auto lg:mx-0">
+                            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-12 max-w-xl mx-auto lg:mx-0 font-light">
                                 {uniqueIntro}
                             </p>
 
-                            {/* ═══ CTAs — Primary (orange "Free Quote") + Ghost (phone) ═══ */}
-                            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start w-full sm:w-auto mb-10 sm:mb-12">
+                            <div className="flex flex-col sm:flex-row gap-6 items-center justify-center lg:justify-start w-full sm:w-auto mb-16">
                                 <Link
                                     href="/fare-quote"
-                                    className="btn btn-cta text-base sm:text-lg px-6 py-4 sm:px-9 sm:py-5 group shadow-[0_0_40px_rgba(249,115,22,0.25)] hover:shadow-[0_0_60px_rgba(249,115,22,0.45)] border-none w-full sm:w-auto flex justify-center items-center"
+                                    className="btn btn-cta text-xl px-12 py-6 rounded-3xl shadow-2xl shadow-orange-500/20 active:scale-95 transition-all font-black uppercase tracking-tight flex items-center justify-center gap-3 border-none bg-orange-500 hover:bg-orange-600 w-full sm:w-auto"
                                 >
-                                    <span>Get a Free Quote</span>
-                                    <ArrowRight className="ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform" size={20} />
+                                    <span>Get Free Quote</span>
+                                    <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
                                 </Link>
                                 <a
                                     href={`tel:${phone.replace(/\D/g, '')}`}
-                                    className="group flex items-center justify-center gap-2 sm:gap-3 text-white transition-all py-4 px-6 sm:px-7 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/[0.06] backdrop-blur-sm w-full sm:w-auto"
+                                    className="flex items-center justify-center gap-4 text-white hover:text-blue-400 transition-all py-6 px-10 rounded-3xl border-2 border-white/20 hover:border-blue-400/40 backdrop-blur-md w-full sm:w-auto font-black uppercase tracking-tight"
                                 >
-                                    <Phone size={18} className="text-blue-300 group-hover:text-white transition-colors" />
-                                    <span className="font-bold tracking-wide text-sm sm:text-base">{phone}</span>
+                                    <Phone size={24} />
+                                    <span>{phone}</span>
                                 </a>
                             </div>
 
-                            {/* ═══ SOCIAL PROOF — Stacked avatars + rating ═══ */}
-                            <div className="flex flex-col sm:flex-row items-center gap-5 mb-10 pt-8 border-t border-white/10 w-full lg:w-auto mx-auto lg:mx-0">
-                                <div className="flex items-center -space-x-3">
-                                    {[
-                                        'https://randomuser.me/api/portraits/men/32.jpg',
-                                        'https://randomuser.me/api/portraits/women/44.jpg',
-                                        'https://randomuser.me/api/portraits/men/46.jpg',
-                                        'https://randomuser.me/api/portraits/women/12.jpg',
-                                        'https://randomuser.me/api/portraits/men/14.jpg'
-                                    ].map((imgSrc, i) => (
-                                        <div
-                                            key={i}
-                                            className="w-10 h-10 rounded-full border-2 border-[#0f2044] shadow-lg overflow-hidden flex-shrink-0"
-                                        >
-                                            <img src={imgSrc} alt="Customer" className="w-full h-full object-cover" />
-                                        </div>
-                                    ))}
-                                    <div className="w-10 h-10 rounded-full bg-white/10 border-2 border-[#0f2044] flex items-center justify-center text-white/70 text-[10px] font-bold backdrop-blur-sm z-10">
-                                        +4K
+                            {/* Social Proof */}
+                            <div className="flex flex-col sm:flex-row items-center gap-6 mb-12 pt-10 border-t border-white/10 w-full lg:w-auto mx-auto lg:mx-0">
+                                <TrustAvatars />
+                                <div className="text-center sm:text-left">
+                                    <div className="flex items-center justify-center sm:justify-start gap-1 text-amber-500 mb-1">
+                                        {[...Array(5)].map((_, i) => (<Star key={i} fill="currentColor" size={16} className="drop-shadow-sm" />))}
                                     </div>
+                                    <p className="text-sm font-medium text-slate-400">Trusted by <strong className="text-white">4,000+</strong> KC Riders</p>
                                 </div>
-                                <div className="flex flex-col gap-0.5 items-center sm:items-start">
-                                    <div className="flex items-center justify-center sm:justify-start gap-1 text-amber-400">
-                                        {[...Array(5)].map((_, i) => (
-                                            <Star key={i} fill="currentColor" size={14} />
-                                        ))}
-                                        <span className="text-white/60 text-sm ml-1 font-medium">4.9/5</span>
-                                    </div>
-                                    <p className="text-sm text-slate-400">
-                                        <strong className="text-white/80">Rick, Scott & 4,000+ riders</strong> trust Quicksilver
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* ═══ CREDIBILITY LOGOS ═══ */}
-                            <div className="flex flex-wrap xl:flex-nowrap whitespace-nowrap items-center justify-center lg:justify-start gap-3 sm:gap-4 mx-auto lg:mx-0">
-                                {[
-                                    { label: 'Fully Insured', icon: <Shield size={16} className="text-[#2463eb]" /> },
-                                    { label: '24/7 Dispatch', icon: <Clock size={16} className="text-[#2463eb]" /> },
-                                    { label: 'Fixed Pricing', icon: <DollarSign size={16} className="text-[#2463eb]" /> },
-                                    { label: 'TripAdvisor ★', icon: <Award size={16} className="text-amber-500" /> },
-                                ].map((badge, i) => (
-                                    <div key={i} className="flex items-center gap-2 bg-white text-[#0f2044] px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest shadow-lg shadow-black/20 hover:-translate-y-1 transition-transform">
-                                        {badge.icon}
-                                        <span>{badge.label}</span>
-                                    </div>
-                                ))}
                             </div>
                         </FadeIn>
 
-                        {/* ═══ RIGHT COLUMN: Hero Imagery — identical to homepage ═══ */}
+                        {/* ═══ RIGHT COLUMN: Hero Imagery ═══ */}
                         <FadeIn delay={0.25} className="w-full relative flex items-center justify-center pb-8 lg:pb-0">
-                            <div className="relative w-full max-w-lg lg:max-w-full mx-auto">
-                                {/* Glow behind vehicle */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-[#2463eb]/20 rounded-full blur-[80px] sm:blur-[100px] pointer-events-none"></div>
-
-                                {/* Main Vehicle Image */}
-                                <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] lg:aspect-auto lg:h-[400px] drop-shadow-[0_20px_60px_rgba(36,99,235,0.4)]">
+                            <div className="relative w-full max-w-2xl lg:max-w-full mx-auto">
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-blue-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+                                <div className="relative w-full aspect-[4/3] drop-shadow-[0_40px_100px_rgba(36,99,235,0.4)]">
                                     <HeroImage
                                         src="/Home page images/Saloon Class.png"
-                                        alt={`Quicksilver premium business sedan for ${locationName} airport transfers`}
+                                        alt={`Quicksilver premium airport shuttle in ${data.name}`}
                                         priority
                                     />
+                                </div>
+
+                                {/* Status Card */}
+                                <div className="absolute -bottom-10 right-[5%] bg-white p-8 rounded-[40px] shadow-2xl border border-slate-100 hidden sm:block">
+                                    <div className="flex items-center gap-5">
+                                        <div className="w-4 h-4 rounded-full bg-green-500 animate-pulse"></div>
+                                        <div>
+                                            <p className="font-black text-[#0c1d37] font-display tracking-tight text-xl">Private Dispatch</p>
+                                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Active in {data.name}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </FadeIn>
                     </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 to-transparent z-20 pointer-events-none"></div>
+
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none"></div>
             </section>
 
             {/* 3) HYBRID ARTICLE INTRO — Problem narrative + Sales Solution Bridge (Video Strategy) */}
